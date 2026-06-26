@@ -23,7 +23,7 @@ const portfolio = [
     category: "Rezidenční development",
     description:
       "Záchrana historické středověké tvrze s renesanční věží a výstavba nového centra MČ Praha–Královice. Ambice 200 bytových jednotek a rodinných domů v postupných etapách příměstského bydlení.",
-    image: "/projects/nove-kralovice.jpg",
+    image: "/projects/nove-kralovice.webp",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const portfolio = [
     category: "Rezidenční development",
     description:
       "Dva nárožní domy přímo pod Vyšehradem s více než 100 byty. Soukromá zahrada, concierge 24/7, prémiové parkování. Podána žádost o společné územní a stavební povolení.",
-    image: "/projects/pod-vysehradem.jpg",
+    image: "/projects/pod-vysehradem.webp",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const portfolio = [
     category: "Rezidenční development",
     description:
       "12podlažní polyfunkční dům, 94 bytových jednotek, výhled na Vltavu. Vydané územní rozhodnutí, příprava žádosti o stavební povolení. Tramvaj před domem, cyklostezka k řece.",
-    image: "/projects/komoranska.jpg",
+    image: "/projects/komoranska.webp",
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const portfolio = [
     category: "Průmyslový park",
     description:
       "Revitalizace brownfieldu bývalé textilky Mykana. 19 500 m² nových průmyslových prostor kategorie A. Zkolaudováno 2019, obsazeno na 10+10 let. Úspěšně prodáno do skupiny CTP.",
-    image: "/projects/chrastava.jpg",
+    image: "/projects/chrastava.webp",
   },
   {
     id: 5,
@@ -63,7 +63,7 @@ const portfolio = [
     category: "Průmyslový park",
     description:
       "Revitalizace brownfieldu bývalé betonárky Prefa. 97 240 m² celkem, 30 000 m² nových logistických prostor kategorie A. Prodáno ve fázi stavebního povolení globálnímu operátoru Logicor.",
-    image: "/projects/prisovice.jpg",
+    image: "/projects/prisovice.webp",
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const portfolio = [
     category: "Office centrum",
     description:
       "Administrativní budova v prémiové lokalitě Brumlovka. 3 360 m² pronajímatelné plochy. Sídlo a hlavní adresa holdingu JMM Capital. Obsazeno spolehlivými nájemci.",
-    image: "/projects/vyskocilova.jpg",
+    image: "/projects/vyskocilova.webp",
   },
   {
     id: 7,

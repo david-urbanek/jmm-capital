@@ -26,19 +26,19 @@ export default function Page() {
             }}
             images={[
               {
-                src: "/projects/komoranska.jpg",
+                src: "/projects/komoranska.webp",
                 alt: "JMM Capital — rezidenční development Komoranská",
               },
               {
-                src: "/projects/prisovice.jpg",
+                src: "/projects/prisovice.webp",
                 alt: "JMM Capital — průmyslový park Přísovice",
               },
               {
-                src: "/projects/vyskocilova.jpg",
+                src: "/projects/vyskocilova.webp",
                 alt: "JMM Capital — komerční nemovitosti Vyskočilova",
               },
               {
-                src: "/projects/chrastava.jpg",
+                src: "/projects/chrastava.webp",
                 alt: "JMM Capital — Business Park Chrastava",
               },
             ]}
