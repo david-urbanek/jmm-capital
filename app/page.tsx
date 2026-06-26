@@ -93,7 +93,12 @@ export default function Page() {
               {
                 title: "Hodnoty",
                 content:
-                  "Naše portfolio zahrnuje rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice.\n\nKaždý projekt začíná jasnou hodnotovou logikou — hledáme příležitosti tam, kde ostatní vidí překážky: brownfieldy, historické objekty, složitá řízení.\n\nJaroslav Miňha, zakladatel & CEO\nrecepce@jmmcapital.cz | +420 242 441 144",
+                  "Naše portfolio zahrnuje rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice.\n\nKaždý projekt začíná jasnou hodnotovou logikou — hledáme příležitosti tam, kde ostatní vidí překážky: brownfieldy, historické objekty, složitá řízení.",
+              },
+              {
+                title: "",
+                content: "Jaroslav Miňha, zakladatel & CEO\nrecepce@jmmcapital.cz | +420 242 441 144",
+                bold: true,
               },
             ]}
           />
@@ -114,7 +119,7 @@ export default function Page() {
           <Contact33
             title="Kontaktujte nás"
             description="Jsme otevřeni spolupráci s partnery a investory, kteří sdílejí naši dlouhodobou perspektivu. Napište nám — rádi se setkáme."
-            image="/projects/pod-vysehradem.png"
+            image="/contact-bg.jpg"
           />
         </section>
       </main>

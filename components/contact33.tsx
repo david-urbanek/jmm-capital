@@ -217,8 +217,8 @@ const Contact33 = ({
                   )}
 
                   <Button
-                    size="lg"
-                    className="w-full sm:w-auto"
+                    variant="outline"
+                    className="w-full sm:w-auto rounded-full border-border/60 text-xs tracking-widest uppercase hover:border-foreground"
                     disabled={form.formState.isSubmitting}
                   >
                     {form.formState.isSubmitting ? (

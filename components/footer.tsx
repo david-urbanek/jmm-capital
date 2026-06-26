@@ -38,7 +38,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-3 mb-5">
-              <div className="flex size-8 items-center justify-center rounded-sm bg-foreground text-background text-xs font-bold tracking-widest">
+              <div className="flex size-8 items-center justify-center rounded-sm bg-[#1c3d28] text-white text-xs font-bold tracking-widest">
                 J
               </div>
               <span className="text-base font-semibold tracking-tight">

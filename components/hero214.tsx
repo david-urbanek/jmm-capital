@@ -184,8 +184,8 @@ const Hero214 = (props: Props) => {
 
           {buttons?.primary && (
             <Button
-              variant="secondary"
-              className="group -bottom-5 left-0 mt-3 flex items-center justify-center rounded-full bg-muted px-6 py-2 tracking-tight hover:gap-4 lg:absolute lg:bottom-0 lg:mt-0 xl:bottom-3"
+              variant="outline"
+              className="group -bottom-5 left-0 mt-3 flex items-center justify-center rounded-full border-border/60 px-6 py-2 text-xs tracking-widest uppercase hover:gap-4 hover:border-foreground lg:absolute lg:bottom-0 lg:mt-0 xl:bottom-3"
               asChild
             >
               <a href={buttons.primary.url}>

@@ -22,8 +22,7 @@ const portfolio = [
     category: "Rezidenční development",
     description:
       "Záchrana historické středověké tvrze s renesanční věží a výstavba nového centra MČ Praha–Královice. Ambice 200 bytových jednotek a rodinných domů v postupných etapách příměstského bydlení.",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/photos/photo-1-16x9.jpg",
+    image: "/projects/nove-kralovice.jpg",
   },
   {
     id: 2,
@@ -33,7 +32,7 @@ const portfolio = [
     category: "Rezidenční development",
     description:
       "Dva nárožní domy přímo pod Vyšehradem s více než 100 byty. Soukromá zahrada, concierge 24/7, prémiové parkování. Podána žádost o společné územní a stavební povolení.",
-    image: "/projects/pod-vysehradem.png",
+    image: "/projects/pod-vysehradem.jpg",
   },
   {
     id: 3,
@@ -135,22 +134,22 @@ const Projects17b = ({ className }: Projects17bProps) => {
             }}
             className="w-full"
           >
-            <CarouselContent className="pr-8 pl-8 container">
+            <CarouselContent className="-ml-4 pl-8">
               {portfolio.map((project) => (
-                <CarouselItem key={project.id} className="basis-auto pl-4 h-full">
-                  <div className="w-[700px] max-w-[calc(100vw-2rem)] h-full">
-                    <div className="overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm h-full flex flex-col">
-                      <div className="aspect-[4/3] overflow-hidden">
+                <CarouselItem key={project.id} className="basis-auto pl-4">
+                  <div className="w-[min(700px,calc(100vw-4rem))]">
+                    <div className="overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm">
+                      <div className="aspect-[4/3] overflow-hidden shrink-0">
                         <img
                           src={project.image}
                           alt={project.title}
                           className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                         />
                       </div>
-                      <div className="space-y-4 p-7 flex flex-col flex-1">
+                      <div className="flex flex-col gap-4 p-7">
                         <div className="space-y-2">
                           <div className="flex items-start justify-between gap-3">
-                            <h3 className="text-xl font-semibold leading-tight">
+                            <h3 className="text-xl font-semibold leading-tight border-l-2 border-[#1c3d28] pl-3">
                               {project.title}
                             </h3>
                             <Badge variant="secondary" className="shrink-0 text-xs">
@@ -169,10 +168,10 @@ const Projects17b = ({ className }: Projects17bProps) => {
                             </div>
                           </div>
                         </div>
-                        <p className="text-sm leading-relaxed text-muted-foreground flex-1">
+                        <p className="text-sm leading-relaxed text-muted-foreground line-clamp-3 min-h-[4.5rem]">
                           {project.description}
                         </p>
-                        <Button variant="default" className="w-full mt-auto">
+                        <Button variant="outline" className="w-full rounded-full border-border/60 text-xs tracking-widest uppercase hover:border-foreground">
                           Zjistit více
                         </Button>
                       </div>

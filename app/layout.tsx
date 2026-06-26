@@ -10,8 +10,40 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata = {
-  title: "JMM Capital",
-  description: "Capital at the intersection of vision and precision.",
+  metadataBase: new URL("https://www.jmmcapital.cz"),
+  title: {
+    default: "JMM Capital",
+    template: "%s | JMM Capital",
+  },
+  description:
+    "Přivádíme na svět udržitelné projekty. Rezidenční development, průmyslové parky a komerční nemovitosti v České republice.",
+  openGraph: {
+    type: "website",
+    locale: "cs_CZ",
+    url: "https://www.jmmcapital.cz",
+    siteName: "JMM Capital",
+    title: "JMM Capital — Přivádíme na svět udržitelné projekty",
+    description:
+      "Jedenáct let disciplinovaného investování. 3,2 mld. Kč objemu transakcí. Rezidenční development, průmyslové parky a komerční nemovitosti.",
+    images: [
+      {
+        url: "/projects/komoranska.jpg",
+        width: 1200,
+        height: 630,
+        alt: "JMM Capital — Modřanské břehy, Praha",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JMM Capital — Přivádíme na svět udržitelné projekty",
+    description:
+      "Jedenáct let disciplinovaného investování. 3,2 mld. Kč objemu transakcí.",
+    images: ["/projects/komoranska.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({

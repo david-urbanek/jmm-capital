@@ -40,6 +40,7 @@ interface About3Props {
   contentSections?: Array<{
     title: string;
     content: string;
+    bold?: boolean;
   }>;
 }
 
@@ -153,7 +154,7 @@ const About3 = ({
             {achievements && achievements.length > 0 && (
               <div className="grid grid-cols-2 gap-6">
                 {achievements.map((item, idx) => (
-                  <div key={item.label + idx} className="flex flex-col gap-1">
+                  <div key={item.label + idx} className="flex flex-col gap-1 border-l-2 border-[#1c3d28] pl-4">
                     <span className="font-mono text-3xl font-semibold md:text-4xl">
                       {item.value}
                     </span>
@@ -169,7 +170,7 @@ const About3 = ({
                     <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-foreground">
                       {section.title}
                     </h3>
-                    <p className="text-sm leading-7 whitespace-pre-line text-muted-foreground">
+                    <p className={cn("text-sm leading-7 whitespace-pre-line text-foreground", section.bold && "font-semibold")}>
                       {section.content}
                     </p>
                   </div>

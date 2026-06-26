@@ -80,7 +80,7 @@ const Stats12 = ({ className }: Stats12Props) => {
             </div>
           </div>
           <div ref={ref} className="flex w-full flex-col items-end lg:w-1/2">
-            <h1 className="font-calSans text-6xl font-medium leading-none lg:text-7xl">
+            <h1 className="font-calSans text-6xl font-medium leading-none lg:text-7xl text-[#1c3d28]">
               <NumberFlow
                 value={
                   showMonthlyStats
@@ -103,7 +103,7 @@ const Stats12 = ({ className }: Stats12Props) => {
               </Button>
             </div>
             <div className="mt-auto mb-10 grid w-full grid-cols-2 gap-14">
-              <div className="text-left">
+              <div className="text-left border-l-2 border-[#1c3d28] pl-4">
                 <h2 className="text-2xl font-medium md:text-3xl">
                   <NumberFlow
                     value={
@@ -116,7 +116,7 @@ const Stats12 = ({ className }: Stats12Props) => {
                 </h2>
                 <p className="text-muted-foreground/70">Bytů v pipeline</p>
               </div>
-              <div className="text-right">
+              <div className="text-right border-r-2 border-[#1c3d28] pr-4">
                 <h2 className="text-2xl font-medium md:text-3xl">
                   <NumberFlow
                     value={
@@ -129,7 +129,7 @@ const Stats12 = ({ className }: Stats12Props) => {
                 </h2>
                 <p className="text-muted-foreground/70">Projektů celkem</p>
               </div>
-              <div className="text-left">
+              <div className="text-left border-l-2 border-[#1c3d28] pl-4">
                 <h2 className="text-2xl font-medium md:text-3xl">
                   <NumberFlow
                     value={
@@ -142,7 +142,7 @@ const Stats12 = ({ className }: Stats12Props) => {
                 </h2>
                 <p className="text-muted-foreground/70">Dokončených ploch</p>
               </div>
-              <div className="text-right">
+              <div className="text-right border-r-2 border-[#1c3d28] pr-4">
                 <h2 className="text-2xl font-medium md:text-3xl">
                   <NumberFlow
                     value={
@@ -187,7 +187,7 @@ function Graph() {
         <g clipPath="url(#grad)">
           <path
             d="M1 118.5C1 118.5 83.308 102.999 114.735 89.4998C146.162 76.0008 189.504 87.7868 235.952 77.4998C273.548 69.1718 294.469 62.4938 329.733 46.9998C409.879 11.7848 452.946 30.9998 483.874 22.4998C514.802 13.9998 635.97 0.84884 644 1.49984"
-            stroke="#16a34a"
+            stroke="#1c3d28"
             strokeWidth="2"
           />
           <path
@@ -204,8 +204,8 @@ function Graph() {
             y2="387.477"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#16a34a" stopOpacity="0.3" />
-            <stop offset="1" stopColor="#16a34a" stopOpacity="0" />
+            <stop stopColor="#1c3d28" stopOpacity="0.3" />
+            <stop offset="1" stopColor="#1c3d28" stopOpacity="0" />
           </linearGradient>
         </defs>
       </motion.svg>

@@ -85,7 +85,7 @@ const Navbar8 = ({ className }: Navbar8Props) => {
               href="/"
               className="flex items-center gap-3 group"
             >
-              <div className="flex size-8 items-center justify-center rounded-sm bg-primary text-primary-foreground text-xs font-bold tracking-widest">
+              <div className="flex size-8 items-center justify-center rounded-sm bg-[#1c3d28] text-white text-xs font-bold tracking-widest">
                 J
               </div>
               <span className="font-display text-lg font-semibold tracking-tight hidden sm:block">
@@ -156,7 +156,7 @@ const MobileNavigationMenu = ({ open, setOpen }: MobileNavigationMenuProps) => {
             </div>
             <div className="flex items-center justify-between pt-5 border-b border-border/40 pb-5">
               <a href="/" className="flex items-center gap-3">
-                <div className="flex size-8 items-center justify-center rounded-sm bg-primary text-primary-foreground text-xs font-bold tracking-widest">
+                <div className="flex size-8 items-center justify-center rounded-sm bg-[#1c3d28] text-white text-xs font-bold tracking-widest">
                   J
                 </div>
                 <span className="font-display text-lg font-semibold tracking-tight">

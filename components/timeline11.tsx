@@ -64,7 +64,7 @@ const Timeline11 = ({ className }: Timeline11Props) => {
                 }}
                 transition={{ ease: "easeOut", duration: 0.5 }}
                 className={cn(
-                  "absolute -top-[33px] left-0 hidden h-0.5 bg-foreground md:block",
+                  "absolute -top-[33px] left-0 hidden h-0.5 bg-[#1c3d28] md:block",
                 )}
               />
             )}
