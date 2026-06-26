@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { FadeUp } from "@/components/fade-up";
 
 const STATS = {
   monthly: {
@@ -59,12 +60,16 @@ const Stats12 = ({ className }: Stats12Props) => {
       <div className="container flex justify-center">
         <div className="flex w-full flex-col justify-between gap-4 lg:flex-row">
           <div className="w-full lg:w-1/3">
-            <h1 className="font-calSans w-full text-3xl font-medium md:text-4xl">
-              Výsledky, které hovoří za nás
-            </h1>
-            <p className="my-4 text-lg tracking-tight text-muted-foreground">
-              Jedenáct let disciplinovaného přístupu k private equity, developmentu a správě nemovitostí v České republice.
-            </p>
+            <FadeUp>
+              <h1 className="font-calSans w-full text-3xl font-medium md:text-4xl">
+                Výsledky, které hovoří za nás
+              </h1>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <p className="my-4 text-lg tracking-tight text-muted-foreground">
+                Jedenáct let disciplinovaného přístupu k private equity, developmentu a správě nemovitostí v České republice.
+              </p>
+            </FadeUp>
             <Button
               variant="secondary"
               className="text-md group mt-10 flex w-fit items-center justify-center gap-2 rounded-full px-6 py-1 tracking-tight shadow-none"

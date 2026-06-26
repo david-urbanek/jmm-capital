@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { Logo } from "@/components/logo";
 
 const FOOTER_LINKS = [
   {
@@ -37,13 +38,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="/" className="flex items-center gap-3 mb-5">
-              <div className="flex size-8 items-center justify-center rounded-sm bg-[#1c3d28] text-white text-xs font-bold tracking-widest">
-                J
-              </div>
-              <span className="text-base font-semibold tracking-tight">
-                JMM Capital
-              </span>
+            <a href="/" className="flex items-center mb-5">
+              <Logo size="md" />
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Přinášíme na svět udržitelné projekty. Máme vize, ctíme hodnoty, hledáme potenciál.

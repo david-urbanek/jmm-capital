@@ -1,6 +1,9 @@
+"use client";
+
 import { Link } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { FadeUp } from "@/components/fade-up";
 
 const teamMembers = [
   {
@@ -46,12 +49,16 @@ const Team4 = ({ className }: Team4Props) => {
     <section className={cn("py-24", className)}>
       <div className="container">
         <div className="mb-12 flex flex-col gap-4">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Tým
-          </h2>
-          <p className="max-w-lg text-muted-foreground">
-            Za každým projektem stojí zkušení lidé, kteří rozumí trhu, číslům i lidem.
-          </p>
+          <FadeUp>
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              Tým
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <p className="max-w-lg text-muted-foreground">
+              Za každým projektem stojí zkušení lidé, kteří rozumí trhu, číslům i lidem.
+            </p>
+          </FadeUp>
         </div>
 
         <div className="mt-10 grid gap-x-12 gap-y-14 sm:grid-cols-2 md:mt-12 lg:grid-cols-4">

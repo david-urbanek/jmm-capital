@@ -6,6 +6,7 @@ import React from "react";
 
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { FadeUp } from "@/components/fade-up";
 
 interface Timeline11Props {
   className?: string;
@@ -47,12 +48,16 @@ const Timeline11 = ({ className }: Timeline11Props) => {
   return (
     <section className={cn("bg-background py-24", className)}>
       <div className="container">
-        <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
-          Naše milníky
-        </h2>
-        <p className="mb-12 text-muted-foreground max-w-xl">
-          Jedenáct let budování hodnoty skrze disciplinovaný přístup k akvizicím, rozvoji a realizaci exitů.
-        </p>
+        <FadeUp>
+          <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
+            Naše milníky
+          </h2>
+        </FadeUp>
+        <FadeUp delay={0.1}>
+          <p className="mb-12 text-muted-foreground max-w-xl">
+            Jedenáct let budování hodnoty skrze disciplinovaný přístup k akvizicím, rozvoji a realizaci exitů.
+          </p>
+        </FadeUp>
         <div className="relative w-full md:py-16">
           <div className="relative flex flex-col items-center md:mt-12">
             <Separator className="absolute -top-8 left-0 hidden md:block" />

@@ -79,7 +79,7 @@ const Hero214 = (props: Props) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2500);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [currentIndex, images.length]);
@@ -88,104 +88,103 @@ const Hero214 = (props: Props) => {
     <section className={cn("pt-10 pb-16 bg-background", className)}>
       <div className="container">
         <div className="mb-10 max-w-2xl lg:mb-16">
-          <h1 className="font-playfair text-left text-4xl tracking-tight md:text-5xl">
+          <motion.h1
+            className="font-playfair text-left text-4xl tracking-tight md:text-5xl"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          >
             {heading}
-          </h1>
+          </motion.h1>
         </div>
         <div className="relative">
           <MaskedDiv maskType="type-5">
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="sync">
               <motion.img
                 key={currentIndex}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover absolute inset-0"
                 src={images[currentIndex].src}
                 alt={images[currentIndex].alt}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, scale: 1.06 }}
+                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.5 }}
+                transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
               />
             </AnimatePresence>
           </MaskedDiv>
 
           <div className="absolute -top-36 right-0 flex gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 30, scale: 0.9 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="hidden size-44 -translate-y-4 overflow-hidden rounded-4xl xl:block xl:-translate-0"
-            >
-              <AnimatePresence mode="popLayout">
+            <div className="hidden size-44 -translate-y-4 overflow-hidden rounded-4xl xl:block xl:-translate-0">
+              <AnimatePresence mode="sync">
                 <motion.img
                   key={currentIndex}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5 }}
                   src={images[(currentIndex + 1) % images.length].src}
                   alt={images[(currentIndex + 1) % images.length].alt}
-                  className="h-full w-full object-cover"
-                />
-              </AnimatePresence>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: -30, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 30, scale: 0.9 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="hidden size-44 -translate-y-4 overflow-hidden rounded-4xl lg:block xl:-translate-0"
-            >
-              <AnimatePresence mode="popLayout">
-                <motion.img
-                  key={currentIndex}
+                  className="h-full w-full object-cover absolute inset-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5 }}
-                  src={images[(currentIndex + 2) % images.length].src}
-                  alt={images[(currentIndex + 2) % images.length].alt}
-                  className="h-full w-full object-cover"
+                  transition={{ duration: 1.4, ease: "easeInOut" }}
                 />
               </AnimatePresence>
-            </motion.div>
+            </div>
+            <div className="hidden size-44 -translate-y-4 overflow-hidden rounded-4xl lg:block xl:-translate-0">
+              <AnimatePresence mode="sync">
+                <motion.img
+                  key={currentIndex}
+                  src={images[(currentIndex + 2) % images.length].src}
+                  alt={images[(currentIndex + 2) % images.length].alt}
+                  className="h-full w-full object-cover absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.4, ease: "easeInOut" }}
+                />
+              </AnimatePresence>
+            </div>
           </div>
 
           <div className="mt-5 flex w-full gap-6 lg:hidden">
             <div className="relative h-44 w-full overflow-hidden rounded-4xl">
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence mode="sync">
                 <motion.img
                   key={currentIndex}
+                  src={images[(currentIndex + 1) % images.length].src}
+                  alt={images[(currentIndex + 1) % images.length].alt}
+                  className="h-full w-full object-cover absolute inset-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5 }}
-                  src={images[(currentIndex + 1) % images.length].src}
-                  alt={images[(currentIndex + 1) % images.length].alt}
-                  className="h-full w-full object-cover"
+                  transition={{ duration: 1.4, ease: "easeInOut" }}
                 />
               </AnimatePresence>
             </div>
             <div className="relative h-44 w-full overflow-hidden rounded-4xl">
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence mode="sync">
                 <motion.img
                   key={currentIndex}
+                  src={images[(currentIndex + 2) % images.length].src}
+                  alt={images[(currentIndex + 2) % images.length].alt}
+                  className="h-full w-full object-cover absolute inset-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5 }}
-                  src={images[(currentIndex + 2) % images.length].src}
-                  alt={images[(currentIndex + 2) % images.length].alt}
-                  className="h-full w-full object-cover"
+                  transition={{ duration: 1.4, ease: "easeInOut" }}
                 />
               </AnimatePresence>
             </div>
           </div>
 
           {buttons?.primary && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.25, ease: "easeOut" }}
+              className="group -bottom-5 left-0 mt-3 lg:absolute lg:bottom-0 lg:mt-0 xl:bottom-3"
+            >
             <Button
               variant="outline"
-              className="group -bottom-5 left-0 mt-3 flex items-center justify-center rounded-full border-border/60 px-6 py-2 text-xs tracking-widest uppercase hover:gap-4 hover:border-foreground lg:absolute lg:bottom-0 lg:mt-0 xl:bottom-3"
+              className="group flex items-center justify-center rounded-full border-border/60 px-6 py-2 text-xs tracking-widest uppercase hover:gap-4 hover:border-foreground"
               asChild
             >
               <a href={buttons.primary.url}>
@@ -193,6 +192,7 @@ const Hero214 = (props: Props) => {
                 <ArrowRight className="size-4 -rotate-45 transition-all duration-300 ease-out group-hover:rotate-0" />
               </a>
             </Button>
+            </motion.div>
           )}
         </div>
       </div>

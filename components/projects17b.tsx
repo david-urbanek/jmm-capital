@@ -12,6 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { FadeUp } from "@/components/fade-up";
 
 const portfolio = [
   {
@@ -113,12 +114,16 @@ const Projects17b = ({ className }: Projects17bProps) => {
     <section className={cn("py-16", className)}>
       <div className="w-full">
         <div className="mb-12 px-8 container">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Naše portfolio
-          </h2>
-          <p className="mt-3 text-muted-foreground max-w-xl">
-            Rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice — diverzifikované portfolio s jasnou hodnotovou logikou.
-          </p>
+          <FadeUp>
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              Naše portfolio
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <p className="mt-3 text-muted-foreground max-w-xl">
+              Rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice — diverzifikované portfolio s jasnou hodnotovou logikou.
+            </p>
+          </FadeUp>
         </div>
         <div className="relative w-full">
           <Carousel

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Marquee,
   MarqueeContent,
@@ -6,6 +8,7 @@ import {
 } from "@/components/kibo-ui/marquee";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { FadeUp } from "@/components/fade-up";
 
 interface About3Props {
   className?: string;
@@ -118,12 +121,16 @@ const About3 = ({
 
         {/* Nadpis + popis — nad gridem */}
         <div className="mb-10">
-          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            {title}
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-xl">
-            {description}
-          </p>
+          <FadeUp>
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              {title}
+            </h1>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-xl">
+              {description}
+            </p>
+          </FadeUp>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">

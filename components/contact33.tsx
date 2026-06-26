@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { FadeUp } from "@/components/fade-up";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Jméno je povinné"),
@@ -93,10 +94,14 @@ const Contact33 = ({
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <div className="mb-10">
-                <h1 className="mb-4 text-3xl font-medium tracking-tight md:text-4xl">
-                  {title}
-                </h1>
-                <p className="text-lg text-muted-foreground">{description}</p>
+                <FadeUp>
+                  <h1 className="mb-4 text-3xl font-medium tracking-tight md:text-4xl">
+                    {title}
+                  </h1>
+                </FadeUp>
+                <FadeUp delay={0.1}>
+                  <p className="text-lg text-muted-foreground">{description}</p>
+                </FadeUp>
               </div>
 
               {isSubmitted && (
