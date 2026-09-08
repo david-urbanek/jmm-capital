@@ -28,7 +28,7 @@
         "Authorization": "Bearer ${SHADCNBLOCKS_API_KEY}"
       }
     },
-    "@kibo-ui": "https://www.kibo-ui.com/r/{name}.json"
+    "@kibo-ui": "https://www.kibo-ui.com/r/{name}.json",
+    "@magicui": "https://magicui.design/r/{name}"
   }
 }
-

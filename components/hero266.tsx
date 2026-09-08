@@ -5,6 +5,7 @@ import { MapPin } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 import { cn } from "@/lib/utils";
 import { buildNotchPath, maskedShapeStyle } from "@/lib/masked-shape";
@@ -25,10 +26,11 @@ interface Buttons {
 }
 
 interface HeroCutoutGalleryProps {
-  heading: React.ReactNode;
+  heading: string;
   description?: string;
   buttons?: Buttons;
-  images: CutoutGalleryImage[];
+  video?: string;
+  images?: CutoutGalleryImage[];
   className?: string;
 }
 
@@ -74,28 +76,37 @@ const defaultProps: Hero266Props = {
 };
 
 const Hero266 = (props: Props) => {
-  const { heading, description, buttons, images, className } = {
+  const { heading, description, buttons, video, images, className } = {
     ...defaultProps,
     ...props,
   };
 
+  const gallery = images ?? [];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (video || gallery.length < 2) return;
     const timer = setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => (prev + 1) % gallery.length);
     }, 4000);
     return () => clearTimeout(timer);
-  }, [currentIndex, images.length]);
+  }, [currentIndex, gallery.length, video]);
 
   return (
     <section className={cn("pt-10 pb-16", className)}>
       <div className="w-full pl-5 sm:pl-8 lg:pl-12">
         <div className="relative mr-4 mb-8 sm:mr-8 sm:mb-12 lg:mr-14 lg:mb-16">
           <div className="relative z-10 mb-6 flex flex-col items-start gap-4 lg:absolute lg:inset-x-0 lg:bottom-0 lg:mb-0 lg:max-w-3xl lg:p-14">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground lg:text-5xl lg:text-white">
+            <TextAnimate
+              as="h1"
+              by="line"
+              animation="blurInUp"
+              duration={0.7}
+              once
+              className="text-3xl font-bold tracking-tight text-foreground lg:text-5xl lg:text-white"
+            >
               {heading}
-            </h1>
+            </TextAnimate>
             {description && (
               <p className="max-w-md text-muted-foreground lg:text-lg lg:text-white/80">
                 {description}
@@ -127,52 +138,65 @@ const Hero266 = (props: Props) => {
           </div>
 
           <MaskedDiv>
-            <AnimatePresence mode="popLayout">
-              <motion.img
-                key={currentIndex}
+            {video ? (
+              <video
                 className="h-full w-full object-cover"
-                src={images[currentIndex].src}
-                alt={images[currentIndex].alt}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.6 }}
+                src={video}
+                autoPlay
+                muted
+                loop
+                playsInline
               />
-            </AnimatePresence>
+            ) : (
+              <AnimatePresence mode="popLayout">
+                <motion.img
+                  key={currentIndex}
+                  className="h-full w-full object-cover"
+                  src={gallery[currentIndex]?.src}
+                  alt={gallery[currentIndex]?.alt}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.6 }}
+                />
+              </AnimatePresence>
+            )}
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-2/3 rounded-b-[2.5rem] bg-gradient-to-t from-black/80 via-black/20 to-transparent lg:block" />
           </MaskedDiv>
 
-          {images[currentIndex].label && (
+          {!video && gallery[currentIndex]?.label && (
             <div className="absolute right-8 bottom-8 hidden items-center gap-2 rounded-full bg-background/90 px-4 py-2 shadow-md backdrop-blur-sm lg:flex">
               <MapPin className="size-4 text-muted-foreground" />
               <span className="text-sm font-medium">
-                {images[currentIndex].label}
+                {gallery[currentIndex].label}
               </span>
             </div>
           )}
         </div>
 
-        <div className="mt-6 flex gap-3 overflow-x-auto lg:hidden">
-          {images.map((img, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={cn(
-                "shrink-0 overflow-hidden rounded-xl border-2 transition-all",
-                i === currentIndex
-                  ? "border-foreground"
-                  : "border-transparent opacity-60",
-              )}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="h-20 w-28 object-cover"
-              />
-            </button>
-          ))}
-        </div>
+        {!video && gallery.length > 1 && (
+          <div className="mt-6 flex gap-3 overflow-x-auto lg:hidden">
+            {gallery.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                className={cn(
+                  "shrink-0 overflow-hidden rounded-xl border-2 transition-all",
+                  i === currentIndex
+                    ? "border-foreground"
+                    : "border-transparent opacity-60",
+                )}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="h-20 w-28 object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

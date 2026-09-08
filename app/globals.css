@@ -160,3 +160,9 @@
 @utility section-subheading {
     @apply mt-3 max-w-xl text-base text-muted-foreground md:text-lg;
 }
+
+/* Global section rhythm — every top-level content section on the page
+   shares this vertical padding so the gaps between sections stay even. */
+@utility section-py {
+    @apply py-28 md:py-40;
+}

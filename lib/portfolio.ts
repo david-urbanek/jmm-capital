@@ -18,13 +18,13 @@ export const projects: Project[] = [
     year: "Ve výstavbě od 2013",
     category: "Rezidenční development",
     description:
-      "4. etapa: 96 bytových jednotek (ČPP 6 300 m²). 5. etapa: 58 bytů. 6. etapa: 29 bytů. Záchrana historické středověké tvrze s renesanční věží a postupná výstavba nového centra MČ Praha–Královice.",
+      "4. etapa: 96 bytových jednotek (ČPP 6 300 m²). 5. etapa: 58 bytů. 6. etapa: 29 bytů. Záchrana historické středověké tvrze s renesanční věží a postupná výstavba nového centra MČ Praha-Královice.",
     image: "/projects/nove-kralovice.webp",
   },
   {
     id: 2,
     title: "Podolská brána",
-    location: "Praha 4 — Podolí",
+    location: "Praha 4, Podolí",
     year: "V přípravě",
     category: "Rezidenční development",
     description:
@@ -34,12 +34,12 @@ export const projects: Project[] = [
   {
     id: 8,
     title: "Podolské nároží",
-    location: "Praha 4 — Podolí",
+    location: "Praha 4, Podolí",
     year: "V přípravě",
     category: "Rezidenční development",
     description:
       "25 bytových jednotek, ČPP 1 170 m², 280 m² parteru pro komerční využití. Kompaktní nárožní dům v Podolí navazující na okolní zástavbu.",
-    image: "/projects/podolske-narozi.png",
+    image: "/projects/podolske-narozi.jpg",
   },
   {
     id: 9,
@@ -49,12 +49,12 @@ export const projects: Project[] = [
     category: "Rezidenční development",
     description:
       "29 bytových jednotek, ČPP 1 909 m². Rezidenční projekt v Praze 9 s důrazem na kvalitu bydlení a okolní zeleň.",
-    image: "/projects/borovnicka.png",
+    image: "/projects/borovnicka.jpg",
   },
   {
     id: 3,
     title: "Modřanské břehy",
-    location: "Praha 12 — Modřany",
+    location: "Praha 12, Modřany",
     year: "V přípravě",
     category: "Rezidenční development",
     description:
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   {
     id: 6,
     title: "BC Vyskočilova",
-    location: "Praha 4 – Michle",
+    location: "Praha 4, Michle",
     year: "Aktivní",
     category: "Office centrum",
     description:
@@ -94,7 +94,7 @@ export const projects: Project[] = [
   {
     id: 7,
     title: "Restaurace Markéta",
-    location: "Praha 22 – Královice",
+    location: "Praha 22, Královice",
     year: "Aktivní",
     category: "Hospitality",
     description:
@@ -127,7 +127,7 @@ export const sectors: Sector[] = [
     slug: "rezidencni-development",
     category: "Rezidenční development",
     description:
-      "Bytové domy a rezidenční projekty s důrazem na lokalitu a kvalitu bydlení — od historických tvrzí po moderní nárožní domy pod Vyšehradem.",
+      "Bytové domy a rezidenční projekty s důrazem na lokalitu a kvalitu bydlení, od historických tvrzí po moderní nárožní domy pod Vyšehradem.",
     image: "/projects/pod-vysehradem.webp",
     icon: Home,
     span: "sm:col-span-2 lg:col-span-2 lg:row-span-2",

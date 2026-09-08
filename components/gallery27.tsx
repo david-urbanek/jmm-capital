@@ -10,6 +10,7 @@ import {
   useCarousel,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 const teamMembers = [
   {
@@ -44,11 +45,11 @@ interface Gallery27Props {
 
 const Gallery27 = ({ className }: Gallery27Props) => {
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("section-py", className)}>
       <div className="container">
-        <h2 className="section-heading">
+        <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading">
           Tým
-        </h2>
+        </TextAnimate>
         <p className="section-subheading">
           Za každým projektem stojí zkušení lidé, kteří rozumí trhu, číslům i
           lidem.
@@ -58,7 +59,7 @@ const Gallery27 = ({ className }: Gallery27Props) => {
             align: "start",
             loop: true,
           }}
-          className="relative w-full pt-15"
+          className="relative w-full pt-12"
         >
           <div className="absolute top-0 right-0 flex h-12 items-center gap-2">
             <CarouselArrow direction="prev" />
@@ -73,7 +74,7 @@ const Gallery27 = ({ className }: Gallery27Props) => {
                     alt={member.title}
                     className="h-92 w-full rounded-2xl object-cover transition-all duration-300 group-hover:translate-y-[-10px]"
                   />
-                  <h3 className="mt-4 text-2xl font-semibold">
+                  <h3 className="mt-4 text-lg font-semibold tracking-tight">
                     {member.title}
                   </h3>
                   <p className="text-muted-foreground">{member.designation}</p>

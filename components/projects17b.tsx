@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { FadeUp } from "@/components/fade-up";
+import { TextAnimate } from "@/components/ui/text-animate";
 import { projects as portfolio, sectors } from "@/lib/portfolio";
 
 interface Projects17bProps {
@@ -39,17 +40,15 @@ const Projects17b = ({ className }: Projects17bProps) => {
   }, [carouselApi]);
 
   return (
-    <section className={cn("py-16", className)}>
+    <section className={cn("section-py", className)}>
       <div className="w-full">
         <div className="mb-12 px-8 container">
-          <FadeUp>
-            <h2 className="section-heading">
-              Naše projekty
-            </h2>
-          </FadeUp>
+          <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading">
+            Naše projekty
+          </TextAnimate>
           <FadeUp delay={0.1}>
             <p className="section-subheading">
-              Rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice — diverzifikované portfolio s jasnou hodnotovou logikou.
+              Rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice: diverzifikované portfolio s jasnou hodnotovou logikou.
             </p>
           </FadeUp>
         </div>
@@ -82,7 +81,7 @@ const Projects17b = ({ className }: Projects17bProps) => {
                       <div className="flex flex-col gap-3 p-5">
                         <div className="space-y-2">
                           <div className="flex items-start justify-between gap-3">
-                            <h3 className="text-lg font-semibold leading-tight border-l-2 border-[#1c3d28] pl-3">
+                            <h3 className="text-lg font-semibold tracking-tight leading-tight border-l-2 border-[#1c3d28] pl-3">
                               {project.title}
                             </h3>
                             <Badge variant="secondary" className="shrink-0 text-xs">

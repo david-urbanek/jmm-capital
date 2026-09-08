@@ -7,6 +7,7 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { FadeUp } from "@/components/fade-up";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 interface Timeline11Props {
   className?: string;
@@ -25,14 +26,14 @@ const Timeline11 = ({ className }: Timeline11Props) => {
     {
       id: 1,
       date: "2019",
-      title: "RENWON — exit",
+      title: "RENWON (exit)",
       description: "Dokončení revitalizace brownfieldu Chrastava (19 500 m²). Úspěšný prodej do skupiny CTP.",
       icon: Factory,
     },
     {
       id: 2,
       date: "2022",
-      title: "AWENOR — exit",
+      title: "AWENOR (exit)",
       description: "Brownfield Příšovice (30 000 m²) prodán ve fázi stavebního povolení společnosti Logicor.",
       icon: Building2,
     },
@@ -40,19 +41,17 @@ const Timeline11 = ({ className }: Timeline11Props) => {
       id: 3,
       date: "2024+",
       title: "Rezidenční expanze",
-      description: "Rozvoj bytového portfolia: Podolská brána (100+ bytů) a Modřanské břehy (94 bytů, 12 podlaží).",
+      description: "Rozvoj bytového portfolia: Podolská brána (65 bytů) a Modřanské břehy (94 bytů, 12 podlaží).",
       icon: FlagIcon,
     },
   ];
 
   return (
-    <section className={cn("bg-background py-24", className)}>
+    <section className={cn("bg-background section-py", className)}>
       <div className="container">
-        <FadeUp>
-          <h2 className="section-heading">
-            Naše milníky
-          </h2>
-        </FadeUp>
+        <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading">
+          Naše milníky
+        </TextAnimate>
         <FadeUp delay={0.1}>
           <p className="section-subheading mb-12">
             Jedenáct let budování hodnoty skrze disciplinovaný přístup k akvizicím, rozvoji a realizaci exitů.

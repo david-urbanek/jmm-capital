@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { buildNotchPath, maskedShapeStyle } from "@/lib/masked-shape";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 interface AboutBasicSection {
   title: string;
@@ -16,6 +17,7 @@ interface AboutBasicProps {
   heading: string;
   description?: string;
   images?: Image[];
+  video?: string;
   sections?: AboutBasicSection[];
   className?: string;
 }
@@ -95,7 +97,7 @@ const FEATURED_MASK_PATH = buildNotchPath(
 );
 
 const About1 = (props: Props) => {
-  const { heading, description, images, sections, className } = {
+  const { heading, description, images, video, sections, className } = {
     ...defaultProps,
     ...props,
   };
@@ -106,34 +108,53 @@ const About1 = (props: Props) => {
   const points = [
     { title: heading, content: description },
     ...contentSections.map(({ title, content }) => ({ title, content })),
-  ].filter((point): point is { title: string; content: string } => Boolean(point.content));
+  ].filter((point): point is { title: string; content: string } =>
+    Boolean(point.content),
+  );
 
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("section-py", className)}>
       <div className="container mx-auto">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-20">
           <div className="flex flex-col justify-center gap-10">
             {points.map((point) => (
               <div key={point.title} className="flex flex-col gap-2">
-                <h3 className="text-xl font-semibold tracking-tight">
+                <TextAnimate
+                  as="h3"
+                  by="word"
+                  animation="blurInUp"
+                  once
+                  className="text-2xl font-semibold tracking-tight md:text-3xl"
+                >
                   {point.title}
-                </h3>
-                <p className="leading-7 text-muted-foreground">
+                </TextAnimate>
+                <p className="leading-relaxed text-muted-foreground">
                   {point.content}
                 </p>
               </div>
             ))}
           </div>
-          {featured && (
+          {(video || featured) && (
             <div
               className="relative mx-auto w-full max-w-md lg:h-full lg:max-w-none"
               style={maskedShapeStyle(FEATURED_MASK_PATH, FEATURED_W, FEATURED_H)}
             >
-              <img
-                src={featured.src}
-                alt={featured.alt}
-                className="h-full w-full object-cover"
-              />
+              {video ? (
+                <video
+                  className="h-full w-full object-cover"
+                  src={video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <img
+                  src={featured!.src}
+                  alt={featured!.alt}
+                  className="h-full w-full object-cover"
+                />
+              )}
             </div>
           )}
         </div>

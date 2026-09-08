@@ -24,6 +24,19 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { FadeUp } from "@/components/fade-up";
+import { TextAnimate } from "@/components/ui/text-animate";
+import { buildNotchPath, maskedShapeStyle } from "@/lib/masked-shape";
+
+const IMAGE_W = 1200;
+const IMAGE_H = 1010;
+const IMAGE_MASK_PATH = buildNotchPath(
+  "bottom-left",
+  IMAGE_W,
+  IMAGE_H,
+  48,
+  120,
+  170,
+);
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Jméno je povinné"),
@@ -88,17 +101,15 @@ const Contact33 = ({
   };
 
   return (
-    <section className={cn("py-32", className)}>
+    <section className={cn("section-py", className)}>
       <div className="container">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
-              <div className="mb-10">
-                <FadeUp>
-                  <h2 className="section-heading">
-                    {title}
-                  </h2>
-                </FadeUp>
+              <div className="mb-12">
+                <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading">
+                  {title}
+                </TextAnimate>
                 <FadeUp delay={0.1}>
                   <p className="section-subheading">{description}</p>
                 </FadeUp>
@@ -240,7 +251,10 @@ const Contact33 = ({
             </div>
 
             <div className="hidden lg:block">
-              <div className="h-full overflow-hidden rounded-2xl">
+              <div
+                className="h-full w-full"
+                style={maskedShapeStyle(IMAGE_MASK_PATH, IMAGE_W, IMAGE_H)}
+              >
                 <img src={image} alt="" className="size-full object-cover" />
               </div>
             </div>

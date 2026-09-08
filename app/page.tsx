@@ -19,13 +19,7 @@ export default function Page() {
         {/* Hero */}
         <section id="hero">
           <Hero266
-            heading={
-              <>
-                Investujeme do potenciálu.
-                <br />
-                Vytváříme hodnotu.
-              </>
-            }
+            heading={"Investujeme do potenciálu.\nVytváříme hodnotu."}
             description="Více než dekádu stavíme portfolio, které spojuje development, dlouhodobé držení nemovitostí, rozvoj a asset management našich aktiv."
             buttons={{
               primary: {
@@ -36,48 +30,7 @@ export default function Page() {
                 ),
               },
             }}
-            images={[
-              {
-                src: "/projects/tvrz-kralovice.png",
-                alt: "JMM Capital — rezidenční development Nové Královice, historická tvrz",
-                label: "Nové Královice",
-              },
-              {
-                src: "/projects/podolske-narozi.png",
-                alt: "JMM Capital — rezidenční development Podolská brána, nárožní dům",
-                label: "Podolská brána",
-              },
-              {
-                src: "/projects/borovnicka.png",
-                alt: "JMM Capital — rezidenční development Borovnická",
-                label: "Borovnická",
-              },
-              {
-                src: "/projects/prisovice.webp",
-                alt: "JMM Capital — průmyslový park Přísovice (AWENOR)",
-                label: "Přísovice",
-              },
-              {
-                src: "/projects/vyskocilova.webp",
-                alt: "JMM Capital — komerční nemovitosti Vyskočilova",
-                label: "Vyskočilova",
-              },
-              {
-                src: "/projects/komoranska.webp",
-                alt: "JMM Capital — rezidenční development Modřanské břehy, Komoranská",
-                label: "Komoranská",
-              },
-              {
-                src: "/projects/pod-vysehradem.webp",
-                alt: "JMM Capital — rezidenční development Podolská brána, Pod Vyšehradem",
-                label: "Pod Vyšehradem",
-              },
-              {
-                src: "/projects/nove-kralovice.webp",
-                alt: "JMM Capital — rezidenční development Nové Královice",
-                label: "Nové Královice",
-              },
-            ]}
+            video="/projects/0908.mp4"
           />
         </section>
 
@@ -100,23 +53,18 @@ export default function Page() {
         <section id="about" className="border-t border-border/40">
           <About1
             heading="Poslání"
-            description="Podnikání je pro mě o svobodě a odpovědnosti. Chovat se čestně a svojí vírou, vůlí a dovedností ovlivnit chod věcí — to je podnikání. Z nevýhod dělat výhody, z nejistot jistoty. To je můj svět. Každé rozhodnutí děláme s výhledem na desítky let dopředu, ne na příští kvartál."
-            images={[
-              {
-                src: "/projects/borovnicka.png",
-                alt: "Borovnická",
-              },
-            ]}
+            description="Podnikání je pro mě o svobodě a odpovědnosti. Chovat se čestně a svojí vírou, vůlí a dovedností ovlivnit chod věcí, to je podnikání. Z nevýhod dělat výhody, z nejistot jistoty. To je můj svět. Každé rozhodnutí děláme s výhledem na desítky let dopředu, ne na příští kvartál."
+            video="/projects/komoranska.mp4"
             sections={[
               {
                 title: "Vize",
                 content:
-                  "Přivádíme na svět udržitelné projekty. Máme vize, ctíme hodnoty, hledáme potenciál. V dnešním světě je spolu všechno a všichni propojeni — a tím, jak jednáme MY, ovlivňujeme jednání ostatních. Není pravda, že jsme jen kapka v moři.",
+                  "Přivádíme na svět udržitelné projekty. Máme vize, ctíme hodnoty, hledáme potenciál. V dnešním světě je spolu všechno a všichni propojeni a tím, jak jednáme MY, ovlivňujeme jednání ostatních. Není pravda, že jsme jen kapka v moři.",
               },
               {
                 title: "Hodnoty",
                 content:
-                  "Naše portfolio zahrnuje rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice. Každý projekt začíná jasnou hodnotovou logikou — hledáme příležitosti tam, kde ostatní vidí překážky: brownfieldy, historické objekty, složitá řízení.",
+                  "Naše portfolio zahrnuje rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice. Každý projekt začíná jasnou hodnotovou logikou. Hledáme příležitosti tam, kde ostatní vidí překážky: brownfieldy, historické objekty, složitá řízení.",
               },
             ]}
           />
@@ -136,8 +84,8 @@ export default function Page() {
         <section id="contact" className="border-t border-border/40">
           <Contact33
             title="Kontaktujte nás"
-            description="Jsme otevřeni spolupráci s partnery a investory, kteří sdílejí naši dlouhodobou perspektivu. Napište nám — rádi se setkáme."
-            image="/contact-bg.jpg"
+            description="Jsme otevřeni spolupráci s partnery a investory, kteří sdílejí naši dlouhodobou perspektivu. Napište nám, rádi se setkáme."
+            image="/projects/borovnicka.jpg"
           />
         </section>
       </main>

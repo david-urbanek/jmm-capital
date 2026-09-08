@@ -22,7 +22,7 @@ export const metadata = {
     locale: "cs_CZ",
     url: "https://www.jmmcapital.cz",
     siteName: "JMM Capital",
-    title: "JMM Capital — Přivádíme na svět udržitelné projekty",
+    title: "JMM Capital: Přivádíme na svět udržitelné projekty",
     description:
       "Jedenáct let disciplinovaného investování. 3,2 mld. Kč objemu transakcí. Rezidenční development, průmyslové parky a komerční nemovitosti.",
     images: [
@@ -30,13 +30,13 @@ export const metadata = {
         url: "/projects/komoranska.jpg",
         width: 1200,
         height: 630,
-        alt: "JMM Capital — Modřanské břehy, Praha",
+        alt: "JMM Capital, Modřanské břehy, Praha",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "JMM Capital — Přivádíme na svět udržitelné projekty",
+    title: "JMM Capital: Přivádíme na svět udržitelné projekty",
     description:
       "Jedenáct let disciplinovaného investování. 3,2 mld. Kč objemu transakcí.",
     images: ["/projects/komoranska.jpg"],

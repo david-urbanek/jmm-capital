@@ -5,6 +5,7 @@ const FOOTER_LINKS = [
   {
     heading: "Navigace",
     links: [
+      { label: "Portfolio", href: "#portfolio" },
       { label: "Poslání", href: "#about" },
       { label: "Naše milníky", href: "#timeline" },
       { label: "Projekty", href: "#projekty" },
@@ -12,19 +13,19 @@ const FOOTER_LINKS = [
     ],
   },
   {
-    heading: "Investice",
+    heading: "Portfolio",
     links: [
-      { label: "Private Equity", href: "#portfolio" },
-      { label: "Rezidenční development", href: "#portfolio" },
-      { label: "Průmyslové parky", href: "#portfolio" },
-      { label: "Debt Collection", href: "#portfolio" },
+      { label: "Rezidenční development", href: "/portfolio/rezidencni-development" },
+      { label: "Průmyslové parky", href: "/portfolio/prumyslove-parky" },
+      { label: "Komerční nemovitosti", href: "/portfolio/komercni-nemovitosti" },
+      { label: "Hospitality", href: "/portfolio/hospitality" },
     ],
   },
   {
     heading: "Firma",
     links: [
       { label: "O nás", href: "#about" },
-      { label: "Jaroslav Miňha", href: "#about" },
+      { label: "Jaroslav Miňha", href: "#team" },
       { label: "Investor Relations", href: "#contact" },
       { label: "recepce@jmmcapital.cz", href: "mailto:recepce@jmmcapital.cz" },
     ],
@@ -42,7 +43,7 @@ const Footer = () => {
               <Logo size="md" />
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Přinášíme na svět udržitelné projekty. Máme vize, ctíme hodnoty, hledáme potenciál.
+              Přivádíme na svět udržitelné projekty. Máme vize, ctíme hodnoty, hledáme potenciál.
             </p>
             <div className="text-xs text-muted-foreground/70 space-y-1">
               <p>Vyskočilova 1326/5, 140 00 Praha 4</p>
