@@ -31,9 +31,9 @@ interface MobileNavigationMenuProps {
 }
 
 const NAVIGATION: MenuItem[] = [
-  { title: "Strategie", url: "#about" },
-  { title: "Milníky", url: "#timeline" },
   { title: "Portfolio", url: "#portfolio" },
+  { title: "Projekty", url: "#projekty" },
+  { title: "Milníky", url: "#timeline" },
   { title: "Kontakt", url: "#contact" },
 ];
 
@@ -113,7 +113,7 @@ const Navbar8 = ({ className }: Navbar8Props) => {
                 asChild
                 className="hidden sm:flex border-border/60 text-foreground/80 hover:text-foreground hover:border-primary text-xs tracking-widest uppercase"
               >
-                <a href="#contact">Investor Relations</a>
+                <a href="#contact">Investujte s námi</a>
               </Button>
               <div className="lg:hidden">
                 <Button
@@ -167,7 +167,7 @@ const MobileNavigationMenu = ({ open, setOpen }: MobileNavigationMenuProps) => {
                 <SheetClose asChild key={index}>
                   <a
                     href={item.url}
-                    className="font-display text-4xl font-light tracking-tight text-foreground/80 hover:text-primary py-3 border-b border-border/20 transition-colors"
+                    className="text-4xl font-light tracking-tight text-foreground/80 hover:text-primary py-3 border-b border-border/20 transition-colors"
                   >
                     {item.title}
                   </a>
@@ -177,7 +177,7 @@ const MobileNavigationMenu = ({ open, setOpen }: MobileNavigationMenuProps) => {
 
             <div className="mt-12">
               <Button asChild className="w-full text-xs tracking-widest uppercase">
-                <a href="#contact">Investor Relations</a>
+                <a href="#contact">Investujte s námi</a>
               </Button>
             </div>
           </div>

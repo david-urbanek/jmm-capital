@@ -95,12 +95,12 @@ const Contact33 = ({
             <div>
               <div className="mb-10">
                 <FadeUp>
-                  <h1 className="mb-4 text-3xl font-medium tracking-tight md:text-4xl">
+                  <h2 className="section-heading">
                     {title}
-                  </h1>
+                  </h2>
                 </FadeUp>
                 <FadeUp delay={0.1}>
-                  <p className="text-lg text-muted-foreground">{description}</p>
+                  <p className="section-subheading">{description}</p>
                 </FadeUp>
               </div>
 

@@ -49,12 +49,12 @@ const Timeline11 = ({ className }: Timeline11Props) => {
     <section className={cn("bg-background py-24", className)}>
       <div className="container">
         <FadeUp>
-          <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="section-heading">
             Naše milníky
           </h2>
         </FadeUp>
         <FadeUp delay={0.1}>
-          <p className="mb-12 text-muted-foreground max-w-xl">
+          <p className="section-subheading mb-12">
             Jedenáct let budování hodnoty skrze disciplinovaný přístup k akvizicím, rozvoji a realizaci exitů.
           </p>
         </FadeUp>

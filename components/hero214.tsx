@@ -24,7 +24,8 @@ interface Buttons {
 }
 
 interface Hero214Props {
-  heading: string;
+  heading: React.ReactNode;
+  subheading?: React.ReactNode;
   buttons?: Buttons;
   images: CutoutGalleryImage[];
   className?: string;
@@ -69,7 +70,7 @@ const defaultProps: Hero214Props = {
 };
 
 const Hero214 = (props: Props) => {
-  const { heading, buttons, images, className } = {
+  const { heading, subheading, buttons, images, className } = {
     ...defaultProps,
     ...props,
   };
@@ -89,13 +90,23 @@ const Hero214 = (props: Props) => {
       <div className="container">
         <div className="mb-10 max-w-2xl lg:mb-16">
           <motion.h1
-            className="font-playfair text-left text-4xl tracking-tight md:text-5xl"
+            className="section-heading"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
             {heading}
           </motion.h1>
+          {subheading && (
+            <motion.p
+              className="section-subheading"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {subheading}
+            </motion.p>
+          )}
         </div>
         <div className="relative">
           <MaskedDiv maskType="type-5">

@@ -7,7 +7,7 @@ const FOOTER_LINKS = [
     links: [
       { label: "Poslání", href: "#about" },
       { label: "Naše milníky", href: "#timeline" },
-      { label: "Portfolio", href: "#portfolio" },
+      { label: "Projekty", href: "#projekty" },
       { label: "Kontakt", href: "#contact" },
     ],
   },
