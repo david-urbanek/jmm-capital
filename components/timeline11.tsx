@@ -68,7 +68,7 @@ const Timeline11 = ({ className }: Timeline11Props) => {
                 }}
                 transition={{ ease: "easeOut", duration: 0.5 }}
                 className={cn(
-                  "absolute -top-[33px] left-0 hidden h-0.5 bg-[#1c3d28] md:block",
+                  "absolute -top-[33px] left-0 hidden h-0.5 bg-petrol-steel md:block",
                 )}
               />
             )}
@@ -89,7 +89,7 @@ const Timeline11 = ({ className }: Timeline11Props) => {
                         }}
                         transition={{ ease: "easeOut", duration: 0.5 }}
                         className={cn(
-                          "absolute top-22 left-2.5 z-10 w-0.5 bg-foreground md:hidden",
+                          "absolute top-22 left-2.5 z-10 w-0.5 bg-petrol-steel md:hidden",
                         )}
                       />
                     )}

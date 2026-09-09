@@ -54,9 +54,8 @@ const Navbar8 = ({ className }: Navbar8Props) => {
 
     const handleScroll = () => {
       const scrolled = window.scrollY > 60;
-      navRef.current?.classList.toggle("bg-background/95", scrolled);
-      navRef.current?.classList.toggle("backdrop-blur-md", scrolled);
-      navRef.current?.classList.toggle("bg-transparent", !scrolled);
+      navRef.current?.classList.toggle("shadow-lg", scrolled);
+      navRef.current?.classList.toggle("shadow-black/10", scrolled);
     };
 
     handleResize();
@@ -76,14 +75,14 @@ const Navbar8 = ({ className }: Navbar8Props) => {
   return (
     <section className={cn("", className)}>
       <div
-        className="fixed top-0 z-50 w-full bg-transparent transition-all duration-500"
+        className="fixed top-0 z-50 w-full bg-petrol-steel border-b border-white/10 transition-shadow duration-500"
         ref={navRef}
       >
         <div className="container">
-          <div className="flex items-center justify-between gap-4 py-5 border-b border-border/40">
+          <div className="flex items-center justify-between gap-4 py-5">
             {/* Logo */}
             <a href="/" className="flex items-center">
-              <Logo size="sm" />
+              <Logo size="sm" className="brightness-0 invert" />
             </a>
 
             {/* Desktop nav */}
@@ -95,7 +94,7 @@ const Navbar8 = ({ className }: Navbar8Props) => {
                       href={item.url}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "bg-transparent text-muted-foreground hover:text-foreground hover:bg-transparent text-sm tracking-wide",
+                        "bg-transparent text-white/70 hover:text-white hover:bg-transparent text-sm tracking-wide",
                       )}
                     >
                       {item.title}
@@ -111,7 +110,7 @@ const Navbar8 = ({ className }: Navbar8Props) => {
                 variant="outline"
                 size="sm"
                 asChild
-                className="hidden sm:flex border-border/60 text-foreground/80 hover:text-foreground hover:border-primary text-xs tracking-widest uppercase"
+                className="hidden sm:flex border-white/30 bg-transparent text-white/90 hover:text-primary-foreground hover:bg-primary hover:border-primary text-xs tracking-widest uppercase"
               >
                 <a href="#contact">Investujte s námi</a>
               </Button>
@@ -120,7 +119,7 @@ const Navbar8 = ({ className }: Navbar8Props) => {
                   variant="ghost"
                   size="icon"
                   onClick={() => setOpen(!open)}
-                  className="text-foreground/70"
+                  className="text-white/80 hover:text-white hover:bg-white/10"
                 >
                   <Menu className="size-5" />
                 </Button>

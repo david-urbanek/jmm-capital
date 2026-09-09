@@ -84,7 +84,14 @@ const Projects17b = ({ className }: Projects17bProps) => {
                             <h3 className="text-lg font-semibold tracking-tight leading-tight border-l-2 border-[#1c3d28] pl-3">
                               {project.title}
                             </h3>
-                            <Badge variant="secondary" className="shrink-0 text-xs">
+                            <Badge
+                              variant="secondary"
+                              className={cn(
+                                "shrink-0 text-xs",
+                                project.category === "Rezidenční development" &&
+                                  "border-[#1c3d28]/20 bg-[#1c3d28]/8 text-[#1c3d28]",
+                              )}
+                            >
                               <Tag className="mr-1 h-3 w-3" />
                               {project.category}
                             </Badge>

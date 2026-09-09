@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 import { Footer } from "@/components/footer";
 import { Navbar8 } from "@/components/navbar8";
 import { projects, sectors } from "@/lib/portfolio";
@@ -58,10 +59,10 @@ export default async function PortfolioSectorPage({
               {sector.tagline ?? sector.description}
             </p>
             {sector.stats && (
-              <div className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
+              <div className="mt-6 flex w-fit flex-wrap justify-center gap-x-10 gap-y-4 rounded-2xl border border-[#1c3d28]/15 bg-[#1c3d28]/5 px-6 py-5">
                 {sector.stats.map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-xl font-bold tracking-tight md:text-2xl">
+                  <div key={stat.label} className="text-center">
+                    <div className="text-xl font-bold tracking-tight text-[#1c3d28] md:text-2xl">
                       {stat.value}
                     </div>
                     <div className="text-xs text-muted-foreground">
@@ -94,7 +95,14 @@ export default async function PortfolioSectorPage({
                       <h3 className="border-l-2 border-[#1c3d28] pl-3 text-lg font-semibold leading-tight">
                         {project.title}
                       </h3>
-                      <Badge variant="secondary" className="shrink-0 text-xs">
+                      <Badge
+                        variant="secondary"
+                        className={cn(
+                          "shrink-0 text-xs",
+                          project.category === "Rezidenční development" &&
+                            "border-[#1c3d28]/20 bg-[#1c3d28]/8 text-[#1c3d28]",
+                        )}
+                      >
                         <Tag className="mr-1 h-3 w-3" />
                         {project.category}
                       </Badge>

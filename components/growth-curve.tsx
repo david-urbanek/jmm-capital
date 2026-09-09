@@ -23,7 +23,7 @@ const GrowthCurve = ({ className }: GrowthCurveProps) => {
       <motion.path
         d={CURVE_D}
         fill="none"
-        stroke="var(--primary)"
+        stroke="var(--petrol-steel)"
         strokeWidth={1.5}
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: 1 }}
