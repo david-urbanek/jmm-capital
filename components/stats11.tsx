@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { GrowthCurve } from "@/components/growth-curve";
+import { CounterNumber } from "@/components/counter-number";
 
 interface Stats11Props {
   className?: string;
@@ -19,16 +20,9 @@ const Stats11 = ({ className }: Stats11Props) => {
               <TextAnimate as="span" by="word" animation="blurInUp" once>
                 {"Dva průmyslové parky s exitem, komerční a hospitality aktiva v držení, "}
               </TextAnimate>
-              <TextAnimate
-                as="span"
-                by="word"
-                animation="blurInUp"
-                delay={0.3}
-                once
-                className="font-medium text-primary/50"
-              >
-                {"318 bytů v pipeline."}
-              </TextAnimate>
+              <span className="font-medium">
+                <CounterNumber value={318} suffix=" bytů v pipeline." />
+              </span>
             </h2>
             <div className="relative grid max-w-2xl gap-4 border-x border-border pb-32 sm:grid-cols-2 sm:gap-10 sm:pb-44 md:ml-10 md:border-0">
               <div className="flex flex-col gap-2">

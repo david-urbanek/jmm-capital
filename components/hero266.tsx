@@ -141,12 +141,14 @@ const Hero266 = (props: Props) => {
             {video ? (
               <video
                 className="h-full w-full object-cover"
-                src={video}
                 autoPlay
                 muted
                 loop
                 playsInline
-              />
+              >
+                <source src={video.replace(/\.mp4$/, ".webm")} type="video/webm" />
+                <source src={video} type="video/mp4" />
+              </video>
             ) : (
               <AnimatePresence mode="popLayout">
                 <motion.img

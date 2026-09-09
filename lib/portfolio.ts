@@ -39,7 +39,7 @@ export const projects: Project[] = [
     category: "Rezidenční development",
     description:
       "25 bytových jednotek, ČPP 1 170 m², 280 m² parteru pro komerční využití. Kompaktní nárožní dům v Podolí navazující na okolní zástavbu.",
-    image: "/projects/podolske-narozi.jpg",
+    image: "/projects/podolske-narozi.webp",
   },
   {
     id: 9,
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     category: "Rezidenční development",
     description:
       "29 bytových jednotek, ČPP 1 909 m². Rezidenční projekt v Praze 9 s důrazem na kvalitu bydlení a okolní zeleň.",
-    image: "/projects/borovnicka.jpg",
+    image: "/projects/borovnicka.webp",
   },
   {
     id: 3,
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     category: "Hospitality",
     description:
       "Restaurace v areálu Tvrze Královice s kapacitou 80 míst a soukromým salónkem pro 40 lidí. Zajišťuje gastronomii pro svatby a firemní akce a doplňuje rezidenční část areálu o vlastní návštěvnost. Oceněna průvodcem Gault&Millau 2026, hodnocení Google 4,8★ (812 recenzí).",
-    image: "/projects/restaurace-marketa.png",
+    image: "/projects/restaurace-marketa.webp",
   },
 ];
 
@@ -168,7 +168,7 @@ export const sectors: Sector[] = [
     category: "Hospitality",
     description:
       "Hotelové a pohostinské provozy rozšiřující portfolio o segment volnočasových nemovitostí.",
-    image: "/projects/restaurace-marketa.png",
+    image: "/projects/restaurace-marketa.webp",
     icon: Hotel,
     span: "lg:col-span-1 lg:row-span-1",
     aspect: "aspect-[4/3] lg:aspect-auto lg:h-full",

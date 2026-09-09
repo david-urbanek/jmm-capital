@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 105 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1,2.498485,2.498485)">
+        <g>
+            <rect x="0.8" y="0.8" width="98.4" height="98.4" style="fill:none;stroke:rgb(11,22,38);stroke-width:1.6px;"/>
+            <g transform="matrix(1,0,0,1,-3.680193,1.26901)">
+                <g transform="matrix(24,0,0,24,81.359375,57.460937)">
+                </g>
+                <text x="26px" y="57.461px" style="font-family:'Inter24pt-Regular', 'Inter 24pt';font-size:24px;">JMM</text>
+            </g>
+            <g transform="matrix(1,0,0,1,0,-8)">
+                <rect x="28" y="77.86" width="44" height="1.4" style="fill:rgb(166,166,166);"/>
+            </g>
+        </g>
+    </g>
+</svg>

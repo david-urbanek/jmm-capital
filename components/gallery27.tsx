@@ -14,7 +14,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 
 const teamMembers = [
   {
-    src: "/founder.png",
+    src: "/founder.webp",
     title: "Jaroslav Miňha",
     designation: "Zakladatel & CEO",
     bio: "Podnikatel s jedenáctiletou zkušeností v private equity a developmentu. Zakladatel JMM Capital a architekt všech klíčových transakcí od akvizice po exit.",

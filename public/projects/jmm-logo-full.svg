@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 391 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1,2.498485,2.498485)">
+        <rect x="0.8" y="0.8" width="98.4" height="98.4" style="fill:none;stroke:rgb(11,22,38);stroke-width:1.6px;"/>
+        <g transform="matrix(1,0,0,1,-5.680193,-2.733313)">
+            <g transform="matrix(30,0,0,30,88.04,63.52)">
+            </g>
+            <text x="26px" y="63.52px" style="font-family:'PlayfairDisplay-Regular', 'Playfair Display';font-size:30px;">JMM</text>
+        </g>
+        <g transform="matrix(1,0,0,1,0,-8)">
+            <rect x="28" y="77.86" width="44" height="1.4" style="fill:rgb(166,166,166);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,97,25.458858)">
+            <g transform="matrix(1,0,0,1,148.581115,1.522283)">
+                <g transform="matrix(36,0,0,36,143.784,28.224)">
+                </g>
+                <text x="0px" y="28.224px" style="font-family:'PlayfairDisplay-Regular', 'Playfair Display';font-size:36px;">CA<tspan x="46.728px " y="28.224px ">P</tspan>IT<tspan x="100.656px 122.616px " y="28.224px 28.224px ">AL</tspan></text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,97,25.458858)">
+            <g transform="matrix(1,0,0,1,27.150076,2.247335)">
+                <rect x="104.32" y="0" width="0.79" height="27.5" style="fill:rgb(126,126,126);"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,97,25.458858)">
+            <g transform="matrix(1,0,0,1,-94.3,-17.835178)">
+                <g transform="matrix(36,0,0,36,209.448,47.944)">
+                </g>
+                <text x="135px" y="47.944px" style="font-family:'PlayfairDisplay-Regular', 'Playfair Display';font-size:36px;">JMM</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,142,26.870989)">
+            <g transform="matrix(1,0,0,1,-142,-36.310989)">
+                <g transform="matrix(8,0,0,8,201.374219,85.820847)">
+                </g>
+                <text x="137.7px" y="85.821px" style="font-family:'Inter24pt-Regular', 'Inter 24pt';font-size:8px;fill:rgb(91,91,91);">PRIV<tspan x="154.454px 159.075px " y="85.821px 85.821px ">AT</tspan>E <tspan x="172.507px " y="85.821px ">E</tspan>QUITY</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,142,26.870989)">
+            <g transform="matrix(1,0,0,1,107.82446,43.689067)">
+                <g transform="matrix(8,0,0,8,51.529688,5.820819)">
+                </g>
+                <text x="0px" y="5.821px" style="font-family:'Inter24pt-Regular', 'Inter 24pt';font-size:8px;fill:rgb(91,91,91);">REAL <tspan x="23.268px " y="5.821px ">E</tspan>ST<tspan x="37.186px 41.807px " y="5.821px 5.821px ">AT</tspan>E</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,142,26.870989)">
+            <g transform="matrix(1,0,0,1,195.544213,43.689067)">
+                <g transform="matrix(8,0,0,8,50.179688,5.820819)">
+                </g>
+                <text x="0px" y="5.821px" style="font-family:'Inter24pt-Regular', 'Inter 24pt';font-size:8px;fill:rgb(91,91,91);">HOSPIT<tspan x="28.098px " y="5.821px ">A</tspan>LITY</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,142,26.870989)">
+            <g transform="matrix(1,0,0,1,-141,-20.200149)">
+                <circle cx="227.8" cy="66.8" r="0.8" style="fill:rgb(126,126,126);"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,142,26.870989)">
+            <g transform="matrix(1,0,0,1,-46.789811,-20.200121)">
+                <circle cx="227.8" cy="66.8" r="0.8" style="fill:rgb(126,126,126);"/>
+            </g>
+        </g>
+    </g>
+</svg>

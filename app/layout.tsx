@@ -1,11 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist_Mono, Inter, Playfair_Display } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-heading" })
 
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
@@ -42,7 +44,12 @@ export const metadata = {
     images: ["/projects/komoranska.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 }
 
@@ -53,9 +60,9 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="cs"
       suppressHydrationWarning
-      className={cn("antialiased", geist.variable, geistMono.variable, "font-sans")}
+      className={cn("antialiased", inter.variable, playfair.variable, geistMono.variable, "font-sans")}
     >
       <body>
         <ThemeProvider forcedTheme="light" enableSystem={false}>

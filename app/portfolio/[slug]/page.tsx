@@ -41,7 +41,7 @@ export default async function PortfolioSectorPage({
     <>
       <Navbar8 />
 
-      <main className="pt-[73px]">
+      <main className="pt-[97px]">
         <section>
           <div className="container pt-16 pb-6 md:pt-20 md:pb-8">
             <Link

@@ -15,7 +15,7 @@ export default function Page() {
     <>
       <Navbar8 />
 
-      <main className="pt-[73px]">
+      <main className="pt-[97px]">
         {/* Hero */}
         <section id="hero">
           <Hero266
@@ -85,7 +85,7 @@ export default function Page() {
           <Contact33
             title="Kontaktujte nás"
             description="Jsme otevřeni spolupráci s partnery a investory, kteří sdílejí naši dlouhodobou perspektivu. Napište nám, rádi se setkáme."
-            image="/projects/borovnicka.jpg"
+            image="/projects/borovnicka.webp"
           />
         </section>
       </main>
