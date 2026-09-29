@@ -7,6 +7,7 @@ import { Timeline11 } from "@/components/timeline11";
 import { Projects17b } from "@/components/projects17b";
 import { PortfolioBento } from "@/components/portfolio-bento";
 import { Gallery27 } from "@/components/gallery27";
+import { Podporujeme } from "@/components/podporujeme";
 import { Contact33 } from "@/components/contact33";
 import { Footer } from "@/components/footer";
 
@@ -39,20 +40,10 @@ export default function Page() {
           <Stats11 />
         </section>
 
-        {/* Timeline */}
-        <section id="timeline" className="border-t border-border/40">
-          <Timeline11 />
-        </section>
-
-        {/* Portfolio */}
-        <section id="portfolio" className="border-t border-border/40">
-          <PortfolioBento />
-        </section>
-
-        {/* About */}
+        {/* Investiční přístup */}
         <section id="about" className="border-t border-border/40">
           <About1
-            heading="Poslání"
+            heading="Investiční přístup"
             description="Podnikání je pro mě o svobodě a odpovědnosti. Chovat se čestně a svojí vírou, vůlí a dovedností ovlivnit chod věcí, to je podnikání. Z nevýhod dělat výhody, z nejistot jistoty. To je můj svět. Každé rozhodnutí děláme s výhledem na desítky let dopředu, ne na příští kvartál."
             video="/projects/komoranska.mp4"
             sections={[
@@ -62,12 +53,22 @@ export default function Page() {
                   "Přivádíme na svět udržitelné projekty. Máme vize, ctíme hodnoty, hledáme potenciál. V dnešním světě je spolu všechno a všichni propojeni a tím, jak jednáme MY, ovlivňujeme jednání ostatních. Není pravda, že jsme jen kapka v moři.",
               },
               {
-                title: "Hodnoty",
+                title: "Investiční teze",
                 content:
                   "Naše portfolio zahrnuje rezidenční development, průmyslové parky, komerční nemovitosti a alternativní investice. Každý projekt začíná jasnou hodnotovou logikou. Hledáme příležitosti tam, kde ostatní vidí překážky: brownfieldy, historické objekty, složitá řízení.",
               },
             ]}
           />
+        </section>
+
+        {/* Portfolio */}
+        <section id="portfolio" className="border-t border-border/40">
+          <PortfolioBento />
+        </section>
+
+        {/* Milníky */}
+        <section id="timeline" className="border-t border-border/40">
+          <Timeline11 />
         </section>
 
         {/* Projekty */}
@@ -78,6 +79,11 @@ export default function Page() {
         {/* Team */}
         <section id="team" className="border-t border-border/40">
           <Gallery27 />
+        </section>
+
+        {/* Podporujeme */}
+        <section id="podporujeme" className="border-t border-border/40">
+          <Podporujeme />
         </section>
 
         {/* Contact */}

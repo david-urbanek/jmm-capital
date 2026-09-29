@@ -84,7 +84,7 @@ export function maskedShapeStyle(
   width: number,
   height: number,
 ): CSSProperties {
-  const svgString = `data:image/svg+xml,%3Csvg width='${width}' height='${height}' viewBox='0 0 ${width} ${height}' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='${path}' fill='%23D9D9D9'/%3E%3C/svg%3E%0A`;
+  const svgString = `data:image/svg+xml,%3Csvg width='${width}' height='${height}' viewBox='0 0 ${width} ${height}' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='${path}' fill='%23D9D9D9'/%3E%3C/svg%3E%0A`;
 
   return {
     aspectRatio: `${width}/${height}`,

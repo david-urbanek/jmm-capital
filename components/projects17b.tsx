@@ -81,7 +81,7 @@ const Projects17b = ({ className }: Projects17bProps) => {
                       <div className="flex flex-col gap-3 p-5">
                         <div className="space-y-2">
                           <div className="flex items-start justify-between gap-3">
-                            <h3 className="text-lg font-semibold tracking-tight leading-tight border-l-2 border-[#1c3d28] pl-3">
+                            <h3 className="text-lg font-semibold tracking-tight leading-tight">
                               {project.title}
                             </h3>
                             <Badge

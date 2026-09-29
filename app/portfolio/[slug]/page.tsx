@@ -1,8 +1,9 @@
-import { ArrowLeft, Calendar, MapPin, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, ExternalLink, MapPin, Tag } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/footer";
 import { Navbar8 } from "@/components/navbar8";
@@ -52,17 +53,35 @@ export default async function PortfolioSectorPage({
               <ArrowLeft className="h-4 w-4" />
               Zpět na portfolio
             </Link>
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              {sector.title}
-            </h1>
-            <p className="mt-3 max-w-xl text-base text-muted-foreground md:text-lg">
-              {sector.tagline ?? sector.description}
-            </p>
+            <div>
+              <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+                {sector.title}
+              </h1>
+              <p className="mt-3 max-w-xl text-base text-muted-foreground md:text-lg">
+                {sector.tagline ?? sector.description}
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {sectors.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/portfolio/${s.slug}`}
+                    className={cn(
+                      "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+                      s.slug === sector.slug
+                        ? "border-petrol-steel bg-gradient-to-r from-petrol-steel via-[#1b3f4f] to-[#0e2530] text-white"
+                        : "border-border bg-background text-muted-foreground hover:border-foreground/40 hover:text-foreground",
+                    )}
+                  >
+                    {s.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
             {sector.stats && (
-              <div className="mt-6 flex w-fit flex-wrap justify-center gap-x-10 gap-y-4 rounded-2xl border border-[#1c3d28]/15 bg-[#1c3d28]/5 px-6 py-5">
+              <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
                 {sector.stats.map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="text-xl font-bold tracking-tight text-[#1c3d28] md:text-2xl">
+                  <div key={stat.label}>
+                    <div className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
                       {stat.value}
                     </div>
                     <div className="text-xs text-muted-foreground">
@@ -92,7 +111,7 @@ export default async function PortfolioSectorPage({
                 <div className="flex flex-col gap-3 p-5">
                   <div className="space-y-2">
                     <div className="flex items-start justify-between gap-3">
-                      <h3 className="border-l-2 border-[#1c3d28] pl-3 text-lg font-semibold leading-tight">
+                      <h3 className="text-lg font-semibold leading-tight">
                         {project.title}
                       </h3>
                       <Badge
@@ -121,6 +140,19 @@ export default async function PortfolioSectorPage({
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     {project.description}
                   </p>
+                  {project.website && (
+                    <Button
+                      asChild
+                      variant="ghost"
+                      size="sm"
+                      className="group mt-1 w-fit rounded-full border border-border/60 px-4 text-xs font-medium tracking-wide text-foreground hover:border-foreground/40"
+                    >
+                      <a href={project.website} target="_blank" rel="noopener noreferrer">
+                        Navštívit web
+                        <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </div>
             ))}

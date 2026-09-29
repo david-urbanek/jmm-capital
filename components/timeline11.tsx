@@ -1,13 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Factory, FlagIcon, RocketIcon } from "lucide-react";
 import React from "react";
 
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { FadeUp } from "@/components/fade-up";
 import { TextAnimate } from "@/components/ui/text-animate";
+import { buildNotchPath, maskedShapeStyle } from "@/lib/masked-shape";
+
+const CARD_W = 1500;
+const CARD_H = 560;
+const CARD_R = 44;
+const CARD_MASK_PATH = buildNotchPath("top-right", CARD_W, CARD_H, CARD_R, 150, 96);
 
 interface Timeline11Props {
   className?: string;
@@ -21,99 +26,99 @@ const Timeline11 = ({ className }: Timeline11Props) => {
       date: "2013",
       title: "Vstup do trhu",
       description: "Akvizice lokality Nové Královice a záchrana historické středověké tvrze s renesanční věží.",
-      icon: RocketIcon,
     },
     {
       id: 1,
       date: "2019",
       title: "RENWON (exit)",
       description: "Dokončení revitalizace brownfieldu Chrastava (19 500 m²). Úspěšný prodej do skupiny CTP.",
-      icon: Factory,
     },
     {
       id: 2,
       date: "2022",
       title: "AWENOR (exit)",
       description: "Brownfield Příšovice (30 000 m²) prodán ve fázi stavebního povolení společnosti Logicor.",
-      icon: Building2,
     },
     {
       id: 3,
       date: "2024+",
       title: "Rezidenční expanze",
       description: "Rozvoj bytového portfolia: Podolská brána (65 bytů) a Modřanské břehy (94 bytů, 12 podlaží).",
-      icon: FlagIcon,
     },
   ];
 
   return (
     <section className={cn("bg-background section-py", className)}>
       <div className="container">
-        <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading">
-          Naše milníky
-        </TextAnimate>
-        <FadeUp delay={0.1}>
-          <p className="section-subheading mb-12">
-            Jedenáct let budování hodnoty skrze disciplinovaný přístup k akvizicím, rozvoji a realizaci exitů.
-          </p>
-        </FadeUp>
-        <div className="relative w-full md:py-16">
-          <div className="relative flex flex-col items-center md:mt-12">
-            <Separator className="absolute -top-8 left-0 hidden md:block" />
-            {currentPhase && (
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{
-                  width: `${(currentPhase / timelinePhases.length) * 104}%`,
-                }}
-                transition={{ ease: "easeOut", duration: 0.5 }}
-                className={cn(
-                  "absolute -top-[33px] left-0 hidden h-0.5 bg-petrol-steel md:block",
-                )}
-              />
-            )}
-            <div className="grid gap-6 md:grid-cols-4">
-              {timelinePhases.map((phase, index) => {
-                const PhaseIcon = phase.icon;
-                return (
-                  <div key={phase.id} className="relative space-y-2">
-                    <Separator
-                      orientation="vertical"
-                      className="absolute top-6 left-2.5 block md:hidden"
-                    />
-                    {index == 0 && (
-                      <motion.div
-                        initial={{ height: 0 }}
-                        whileInView={{
-                          height: currentPhase * 125,
-                        }}
-                        transition={{ ease: "easeOut", duration: 0.5 }}
-                        className={cn(
-                          "absolute top-22 left-2.5 z-10 w-0.5 bg-petrol-steel md:hidden",
-                        )}
+        <div
+          className="relative bg-petrol-steel px-6 pt-16 pb-24 md:px-12 md:pt-24 md:pb-32"
+          style={{ ...maskedShapeStyle(CARD_MASK_PATH, CARD_W, CARD_H), aspectRatio: "auto" }}
+        >
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-petrol-steel via-[#1b3f4f] to-[#0e2530]" />
+          <div className="pointer-events-none absolute -top-32 -right-16 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
+
+          <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading relative text-white">
+            Naše milníky
+          </TextAnimate>
+          <FadeUp delay={0.1}>
+            <p className="section-subheading relative mb-12 text-white/70">
+              Jedenáct let budování hodnoty skrze disciplinovaný přístup k akvizicím, rozvoji a realizaci exitů.
+            </p>
+          </FadeUp>
+
+          <div className="relative w-full md:py-20">
+            <div className="relative flex flex-col items-center md:mt-12">
+              <Separator className="absolute -top-8 left-0 hidden bg-white/20 md:block" />
+              {currentPhase && (
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{
+                    width: `${(currentPhase / timelinePhases.length) * 104}%`,
+                  }}
+                  transition={{ ease: "easeOut", duration: 0.5 }}
+                  className={cn(
+                    "absolute -top-[33px] left-0 hidden h-0.5 bg-white md:block",
+                  )}
+                />
+              )}
+              <div className="grid gap-6 md:grid-cols-4">
+                {timelinePhases.map((phase, index) => {
+                  return (
+                    <div key={phase.id} className="relative space-y-2">
+                      <Separator
+                        orientation="vertical"
+                        className="absolute top-6 left-2.5 block bg-white/20 md:hidden"
                       />
-                    )}
-                    <div className="absolute top-4 -left-6 z-10 mb-5 flex size-18 items-center justify-center rounded-full bg-background p-1 md:-top-17 md:-left-4">
-                      <div className="flex size-10 items-center justify-center rounded-lg border border-border bg-background p-[5px]">
-                        <div className="flex size-full items-center justify-center rounded-md border border-border bg-muted">
-                          <PhaseIcon size={16} />
+                      {index == 0 && (
+                        <motion.div
+                          initial={{ height: 0 }}
+                          whileInView={{
+                            height: currentPhase * 125,
+                          }}
+                          transition={{ ease: "easeOut", duration: 0.5 }}
+                          className={cn(
+                            "absolute top-22 left-2.5 z-10 w-0.5 bg-white md:hidden",
+                          )}
+                        />
+                      )}
+                      <div className="absolute top-4 -left-6 z-10 mb-5 flex size-18 items-center justify-center rounded-full bg-petrol-steel p-1 md:-top-17 md:-left-4">
+                        <div className="flex size-16 items-center justify-center rounded-full border border-white/20 bg-white text-xs font-semibold tracking-tight text-petrol-steel">
+                          {phase.date}
                         </div>
                       </div>
+                      <div className="pl-13 md:pl-0">
+                        <h3 className="mt-10 text-lg font-semibold tracking-tight text-white">
+                          {phase.title}
+                        </h3>
+                        <p className="text-sm text-white/70">
+                          {phase.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="pl-13 md:pl-0">
-                      <p className="mt-10 text-sm text-muted-foreground">
-                        {phase.date}
-                      </p>
-                      <h3 className="text-lg font-semibold tracking-tight text-foreground">
-                        {phase.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {phase.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

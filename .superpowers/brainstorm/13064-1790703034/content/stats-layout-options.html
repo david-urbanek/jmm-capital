@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --ink:#101213; --muted:#707477; --line:#dedfdf; --accent:#285568; --paper:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f4f5f5; color:var(--ink); font-family:Arial, sans-serif; }
+    main { max-width:1440px; margin:0 auto; padding:48px 32px 64px; }
+    h1 { margin:0; font-family:Georgia,serif; font-size:36px; }
+    .intro { max-width:730px; color:#565a5c; line-height:1.5; margin:12px 0 32px; }
+    .options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .option { cursor:pointer; overflow:hidden; border:1px solid #d8dada; border-radius:16px; background:var(--paper); transition:transform .2s, border-color .2s, box-shadow .2s; }
+    .option:hover, .option.selected { transform:translateY(-3px); border-color:var(--accent); box-shadow:0 10px 28px rgba(14,37,48,.12); }
+    .mock { min-height:330px; padding:22px; background:white; }
+    .crumb { color:#73787b; font-size:10px; margin-bottom:20px; }
+    .title { margin:0; font:600 25px Georgia,serif; }
+    .desc { max-width:280px; color:#707477; font-size:12px; line-height:1.5; margin:8px 0 16px; }
+    .tabs { display:flex; flex-wrap:wrap; gap:5px; }
+    .tab { border:1px solid #e4e4e4; border-radius:999px; color:#6f7375; font-size:9px; padding:6px 9px; }
+    .tab.active { border-color:var(--accent); background:var(--accent); color:white; }
+    .metrics { color:var(--ink); }
+    .metric-value { display:block; font-size:18px; font-weight:700; letter-spacing:-.04em; }
+    .metric-label { display:block; color:#777b7e; font-size:9px; line-height:1.25; margin-top:2px; }
+    .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-top:18px; }
+    .project { height:50px; border-radius:7px; background:linear-gradient(140deg,#7d9aa5,#d4dadd 52%,#859d6e); }
+    .caption { padding:18px; border-top:1px solid #ececec; }
+    .caption h2 { font-size:16px; margin:0 0 6px; }
+    .caption p { color:#5e6366; font-size:13px; line-height:1.45; margin:0; }
+    .recommended { display:inline-block; margin:0 0 8px; color:var(--accent); font-size:10px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+    .rail { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:18px; padding:12px 0; }
+    .rail > div { padding:0 12px; }
+    .rail > div+div { border-left:1px solid var(--line); }
+    .below-tabs { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:18px; }
+    .below-tabs > div { padding-left:9px; border-left:2px solid var(--accent); }
+    .side-layout { display:grid; grid-template-columns:1fr 74px; gap:13px; }
+    .side-metrics { padding-left:12px; border-left:1px solid var(--line); display:flex; flex-direction:column; gap:12px; }
+    @media(max-width:900px) { .options { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Kam umístit čísla?</h1>
+    <p class="intro">Nadpis, popis a přepínač sektorů zůstávají jako jeden blok. Porovnávám tři čisté způsoby, jak čísla nechat samostatná, ale pořád v přirozené návaznosti na obsah.</p>
+    <div class="options">
+      <article class="option" data-choice="a" onclick="toggleSelect(this)">
+        <div class="mock">
+          <span class="recommended">Doporučení</span>
+          <div class="crumb">← Zpět na portfolio</div>
+          <h3 class="title">Rezidenční development</h3>
+          <p class="desc">Rezidenční development soustředíme do vyhledávaných pražských lokalit.</p>
+          <div class="tabs"><span class="tab active">Rezidenční development</span><span class="tab">Hospitality</span><span class="tab">Komerční</span></div>
+          <div class="rail metrics">
+            <div><span class="metric-value">318+</span><span class="metric-label">bytů v pipeline</span></div>
+            <div><span class="metric-value">18 900+</span><span class="metric-label">m² ČPP v přípravě</span></div>
+            <div><span class="metric-value">5</span><span class="metric-label">rezidenčních projektů</span></div>
+          </div>
+          <div class="projects"><div class="project"></div><div class="project"></div><div class="project"></div></div>
+        </div>
+        <div class="caption"><h2>A — Horizontální lišta</h2><p>Čísla tvoří samostatnou, subtilně oddělenou řadu pod přepínačem. Žádné pozadí, jen tenké dělicí linky.</p></div>
+      </article>
+      <article class="option" data-choice="b" onclick="toggleSelect(this)">
+        <div class="mock">
+          <div class="crumb">← Zpět na portfolio</div>
+          <h3 class="title">Rezidenční development</h3>
+          <p class="desc">Rezidenční development soustředíme do vyhledávaných pražských lokalit.</p>
+          <div class="below-tabs metrics">
+            <div><span class="metric-value">318+</span><span class="metric-label">bytů v pipeline</span></div>
+            <div><span class="metric-value">18 900+</span><span class="metric-label">m² ČPP v přípravě</span></div>
+            <div><span class="metric-value">5</span><span class="metric-label">rezidenčních projektů</span></div>
+          </div>
+          <div class="tabs" style="margin-top:18px"><span class="tab active">Rezidenční development</span><span class="tab">Hospitality</span><span class="tab">Komerční</span></div>
+          <div class="projects"><div class="project"></div><div class="project"></div><div class="project"></div></div>
+        </div>
+        <div class="caption"><h2>B — Staty pod popisem</h2><p>Tři lehké bloky přímo pod úvodem; přepínač začne až pod nimi. Nejvíc propojené s titulkem.</p></div>
+      </article>
+      <article class="option" data-choice="c" onclick="toggleSelect(this)">
+        <div class="mock">
+          <div class="crumb">← Zpět na portfolio</div>
+          <div class="side-layout">
+            <div>
+              <h3 class="title">Rezidenční development</h3>
+              <p class="desc">Rezidenční development soustředíme do vyhledávaných pražských lokalit.</p>
+              <div class="tabs"><span class="tab active">Rezidenční development</span><span class="tab">Hospitality</span><span class="tab">Komerční</span></div>
+            </div>
+            <div class="side-metrics metrics">
+              <div><span class="metric-value">318+</span><span class="metric-label">bytů</span></div>
+              <div><span class="metric-value">18.9k</span><span class="metric-label">m² ČPP</span></div>
+              <div><span class="metric-value">5</span><span class="metric-label">projektů</span></div>
+            </div>
+          </div>
+          <div class="projects"><div class="project"></div><div class="project"></div><div class="project"></div></div>
+        </div>
+        <div class="caption"><h2>C — Tenký pravý sloupec</h2><p>Současná logika, ale kompaktnější: jedna jemná svislá linka a zkrácené štítky. Nejmenší zásah.</p></div>
+      </article>
+    </div>
+    <p class="intro" style="margin-top:24px">Klikni na variantu, která působí nejlépe, nebo napiš, co chceš zkombinovat.</p>
+  </main>
+</body>
+</html>

@@ -18,10 +18,10 @@ const Stats11 = ({ className }: Stats11Props) => {
           <div>
             <h2 className="section-heading mb-16 max-w-3xl sm:mb-24 md:mx-10">
               <TextAnimate as="span" by="word" animation="blurInUp" once>
-                {"Dva průmyslové parky s exitem, komerční a hospitality aktiva v držení, "}
+                {"Dva tech retail parky s exitem, komerční a hospitality aktiva v držení, "}
               </TextAnimate>
               <span className="font-medium">
-                <CounterNumber value={318} suffix=" bytů v pipeline." />
+                <CounterNumber value={396} suffix=" bytů v pipeline." />
               </span>
             </h2>
             <div className="relative grid max-w-2xl gap-4 border-x border-border pb-32 sm:grid-cols-2 sm:gap-10 sm:pb-44 md:ml-10 md:border-0">
@@ -37,19 +37,28 @@ const Stats11 = ({ className }: Stats11Props) => {
               <div className="flex flex-col gap-2">
                 <span className="flex gap-5 text-3xl font-semibold">
                   <span className="relative -left-px w-px bg-primary/50"></span>
-                  7+
+                  2
                 </span>
                 <p className="pl-5 font-medium text-muted-foreground/80">
-                  realizovaných projektů
+                  exity tech retail parků
                 </p>
               </div>
               <div className="flex flex-col gap-2">
                 <span className="flex gap-5 text-3xl font-semibold">
                   <span className="relative -left-px w-px bg-primary/50"></span>
-                  318+
+                  396+
                 </span>
                 <p className="pl-5 font-medium text-muted-foreground/80">
                   bytových jednotek v pipeline
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="flex gap-5 text-3xl font-semibold">
+                  <span className="relative -left-px w-px bg-primary/50"></span>
+                  49 500
+                </span>
+                <p className="pl-5 font-medium text-muted-foreground/80">
+                  m² revitalizovaných průmyslových ploch
                 </p>
               </div>
             </div>

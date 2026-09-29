@@ -105,20 +105,29 @@ const About1 = (props: Props) => {
   const featured = (images ?? []).slice(0, MAX_IMAGES)[0];
   const contentSections = (sections ?? []).slice(0, MAX_SECTIONS);
 
-  const points = [
-    { title: heading, content: description },
-    ...contentSections.map(({ title, content }) => ({ title, content })),
-  ].filter((point): point is { title: string; content: string } =>
-    Boolean(point.content),
-  );
-
   return (
     <section className={cn("section-py", className)}>
       <div className="container mx-auto">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-20">
           <div className="flex flex-col justify-center gap-10">
-            {points.map((point) => (
-              <div key={point.title} className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
+              <TextAnimate
+                as="h2"
+                by="word"
+                animation="blurInUp"
+                once
+                className="section-heading"
+              >
+                {heading}
+              </TextAnimate>
+              {description && (
+                <p className="leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+              )}
+            </div>
+            {contentSections.map((section) => (
+              <div key={section.title} className="flex flex-col gap-2">
                 <TextAnimate
                   as="h3"
                   by="word"
@@ -126,10 +135,10 @@ const About1 = (props: Props) => {
                   once
                   className="text-2xl font-semibold tracking-tight md:text-3xl"
                 >
-                  {point.title}
+                  {section.title}
                 </TextAnimate>
                 <p className="leading-relaxed text-muted-foreground">
-                  {point.content}
+                  {section.content}
                 </p>
               </div>
             ))}

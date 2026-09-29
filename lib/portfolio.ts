@@ -8,9 +8,21 @@ export interface Project {
   category: string;
   description: string;
   image: string;
+  website?: string;
 }
 
 export const projects: Project[] = [
+  {
+    id: 3,
+    title: "Modřanské břehy",
+    location: "Praha 12, Modřany",
+    year: "V přípravě",
+    category: "Rezidenční development",
+    description:
+      "94 bytových jednotek, ČPP 5 283 m², 359 m² parteru pro komerční využití. 12podlažní polyfunkční dům s výhledem na Vltavu. Vydané územní rozhodnutí, příprava žádosti o stavební povolení.",
+    image: "/projects/komoranska.webp",
+    website: "https://modranskebrehy.cz/",
+  },
   {
     id: 1,
     title: "Nové Královice",
@@ -20,6 +32,7 @@ export const projects: Project[] = [
     description:
       "4. etapa: 96 bytových jednotek (ČPP 6 300 m²). 5. etapa: 58 bytů. 6. etapa: 29 bytů. Záchrana historické středověké tvrze s renesanční věží a postupná výstavba nového centra MČ Praha-Královice.",
     image: "/projects/nove-kralovice.webp",
+    website: "https://www.novekralovice.cz/",
   },
   {
     id: 2,
@@ -48,18 +61,8 @@ export const projects: Project[] = [
     year: "V přípravě",
     category: "Rezidenční development",
     description:
-      "29 bytových jednotek, ČPP 1 909 m². Rezidenční projekt v Praze 9 s důrazem na kvalitu bydlení a okolní zeleň.",
+      "29 bytových jednotek, ČPP 1 909 m². Projekt v Praze 9 s důrazem na kvalitu bydlení a okolní zeleň.",
     image: "/projects/borovnicka.webp",
-  },
-  {
-    id: 3,
-    title: "Modřanské břehy",
-    location: "Praha 12, Modřany",
-    year: "V přípravě",
-    category: "Rezidenční development",
-    description:
-      "94 bytových jednotek, ČPP 5 283 m², 359 m² parteru pro komerční využití. 12podlažní polyfunkční dům s výhledem na Vltavu. Vydané územní rozhodnutí, příprava žádosti o stavební povolení.",
-    image: "/projects/komoranska.webp",
   },
   {
     id: 4,
@@ -90,6 +93,7 @@ export const projects: Project[] = [
     description:
       "Administrativní budova v prémiové lokalitě Brumlovka. 3 360 m² pronajímatelné plochy. Sídlo a hlavní adresa holdingu JMM Capital. Obsazeno spolehlivými nájemci.",
     image: "/projects/vyskocilova.webp",
+    website: "https://bcvyskocilova.cz/",
   },
   {
     id: 7,
@@ -100,6 +104,28 @@ export const projects: Project[] = [
     description:
       "Restaurace v areálu Tvrze Královice s kapacitou 80 míst a soukromým salónkem pro 40 lidí. Zajišťuje gastronomii pro svatby a firemní akce a doplňuje rezidenční část areálu o vlastní návštěvnost. Oceněna průvodcem Gault&Millau 2026, hodnocení Google 4,8★ (812 recenzí).",
     image: "/projects/restaurace-marketa.webp",
+    website: "https://www.restauracemarketa.cz/",
+  },
+  {
+    id: 10,
+    title: "Tvrz Královice",
+    location: "Praha 22, Nové Královice",
+    year: "Aktivní",
+    category: "Hospitality",
+    description:
+      "Zrekonstruovaná historická tvrz s renesanční věží proměněná v prostor pro svatby, firemní akce a výstavy. Zázemí doplňuje Restaurace Markéta a přilehlé rezidenční Nové Královice.",
+    image: "/projects/tvrz-kralovice.jpg",
+    website: "https://www.tvrzkralovice.cz/",
+  },
+  {
+    id: 11,
+    title: "Amalia Haus, Land Haus, Tux",
+    location: "Tux, Rakousko",
+    year: "V provozu",
+    category: "Hospitality",
+    description:
+      "Dva penziony s kapacitou 53 lůžek v rakouském Tuxu, 5 km od celoročně otevřeného ledovce Hintertux. Celoroční provoz se zimní i letní sezónou a hodnocením 9,0 (Fantastické, 234 hodnocení) na Booking.com.",
+    image: "/projects/amalia-haus.png",
   },
 ];
 
@@ -141,13 +167,13 @@ export const sectors: Sector[] = [
     ],
   },
   {
-    title: "Průmyslové parky",
-    slug: "prumyslove-parky",
-    category: "Průmyslový park",
+    title: "Hospitality",
+    slug: "hospitality",
+    category: "Hospitality",
     description:
-      "Revitalizace brownfieldů na moderní logistické a výrobní areály kategorie A pro nadnárodní nájemce a operátory.",
-    image: "/projects/prisovice.webp",
-    icon: Factory,
+      "Hotelové a pohostinské provozy rozšiřující portfolio o segment volnočasových nemovitostí.",
+    image: "/projects/restaurace-marketa.webp",
+    icon: Hotel,
     span: "sm:col-span-2 lg:col-span-2 lg:row-span-1",
     aspect: "aspect-[4/3] lg:aspect-auto lg:h-full",
   },
@@ -163,13 +189,13 @@ export const sectors: Sector[] = [
     aspect: "aspect-[4/3] lg:aspect-auto lg:h-full",
   },
   {
-    title: "Hospitality",
-    slug: "hospitality",
-    category: "Hospitality",
+    title: "Průmyslové parky",
+    slug: "prumyslove-parky",
+    category: "Průmyslový park",
     description:
-      "Hotelové a pohostinské provozy rozšiřující portfolio o segment volnočasových nemovitostí.",
-    image: "/projects/restaurace-marketa.webp",
-    icon: Hotel,
+      "Revitalizace brownfieldů na moderní logistické a výrobní areály kategorie A pro nadnárodní nájemce a operátory.",
+    image: "/projects/prisovice.webp",
+    icon: Factory,
     span: "lg:col-span-1 lg:row-span-1",
     aspect: "aspect-[4/3] lg:aspect-auto lg:h-full",
   },
