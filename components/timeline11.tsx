@@ -14,6 +14,29 @@ const CARD_H = 560;
 const CARD_R = 44;
 const CARD_MASK_PATH = buildNotchPath("top-right", CARD_W, CARD_H, CARD_R, 150, 96);
 
+const MILESTONE_CURVES = [
+  {
+    d: "M-20 720C320 720 635 625 920 470C1200 318 1402 132 1620 -18",
+    delay: 0,
+    duration: 1.7,
+  },
+  {
+    d: "M-20 760C345 760 660 684 950 545C1218 414 1417 238 1620 82",
+    delay: 0.16,
+    duration: 1.65,
+  },
+  {
+    d: "M-20 798C366 798 690 741 982 619C1235 510 1430 340 1620 194",
+    delay: 0.32,
+    duration: 1.6,
+  },
+  {
+    d: "M-20 838C390 838 718 798 1012 696C1250 608 1443 446 1620 304",
+    delay: 0.48,
+    duration: 1.55,
+  },
+];
+
 interface Timeline11Props {
   className?: string;
 }
@@ -55,6 +78,46 @@ const Timeline11 = ({ className }: Timeline11Props) => {
           style={{ ...maskedShapeStyle(CARD_MASK_PATH, CARD_W, CARD_H), aspectRatio: "auto" }}
         >
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-petrol-steel via-[#1b3f4f] to-[#0e2530]" />
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 1600 800"
+            preserveAspectRatio="none"
+            className="milestone-growth-curve pointer-events-none absolute inset-0 h-full w-full"
+          >
+            {MILESTONE_CURVES.map((curve, index) => (
+              <g key={curve.d}>
+                <path
+                  d={curve.d}
+                  fill="none"
+                  stroke="white"
+                  strokeOpacity="0.08"
+                  strokeWidth="2"
+                />
+                <motion.path
+                  data-curve-index={index}
+                  d={curve.d}
+                  fill="none"
+                  stroke="white"
+                  strokeOpacity="0.46"
+                  strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{
+                    duration: curve.duration,
+                    delay: curve.delay,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                />
+              </g>
+            ))}
+            <g stroke="white" strokeDasharray="8 12" strokeOpacity="0.07" strokeWidth="1">
+              <path d="M640 635V800" />
+              <path d="M925 475V800" />
+              <path d="M1205 318V800" />
+              <path d="M1405 130V800" />
+            </g>
+          </svg>
           <div className="pointer-events-none absolute -top-32 -right-16 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
 
