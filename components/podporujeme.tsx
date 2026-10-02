@@ -1,12 +1,12 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react"
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { FadeUp } from "@/components/fade-up";
-import { TextAnimate } from "@/components/ui/text-animate";
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { FadeUp } from "@/components/fade-up"
+import { TextAnimate } from "@/components/ui/text-animate"
 
 interface PodporujemeProps {
-  className?: string;
+  className?: string
 }
 
 const achievements: { value: string; label: string }[] = [
@@ -14,7 +14,7 @@ const achievements: { value: string; label: string }[] = [
   { value: "13 let", label: "nejmladší hráč přes cut na Challenge Tour" },
   { value: "2.", label: "Junior Invitational, Sage Valley" },
   { value: "3×", label: "účast na DP World Tour" },
-];
+]
 
 const Podporujeme = ({ className }: PodporujemeProps) => {
   return (
@@ -32,13 +32,13 @@ const Podporujeme = ({ className }: PodporujemeProps) => {
               Podporujeme jeden z největších talentů světového golfu.
             </TextAnimate>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Louis Klein se narodil v srpnu 2009 a už teď patří ve své kategorii
-              mezi nejlepší juniory na světě. Jako nejmladší hráč v historii prošel
-              ve 13 letech cutem na profesionální Challenge Tour, ve 14 letech
-              skončil druhý na prestižním Junior Invitational v Sage Valley a
-              zahrál si tři turnaje série DP World Tour. Před sebou má dlouhou
-              cestu za poznáním hranic svých golfových schopností. Jsme hrdí, že
-              ho na ní podporujeme.
+              Louis Klein se narodil v srpnu 2009 a už teď patří ve své
+              kategorii mezi nejlepší juniory na světě. Jako nejmladší hráč v
+              historii prošel ve 13 letech cutem na profesionální Challenge
+              Tour, ve 14 letech skončil druhý na prestižním Junior Invitational
+              v Sage Valley a zahrál si tři turnaje série DP World Tour. Před
+              sebou má dlouhou cestu za poznáním hranic svých golfových
+              schopností. Jsme hrdí, že ho na ní podporujeme.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-6">
@@ -57,8 +57,7 @@ const Podporujeme = ({ className }: PodporujemeProps) => {
             <div className="mt-10">
               <Button
                 asChild
-                variant="outline"
-                className="group text-xs uppercase tracking-widest"
+                className="group text-xs tracking-widest uppercase"
               >
                 <a
                   href="https://www.louiskleingolf.com/cs/"
@@ -80,7 +79,7 @@ const Podporujeme = ({ className }: PodporujemeProps) => {
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                <span className="text-xs font-medium uppercase tracking-widest text-white/70">
+                <span className="text-xs font-medium tracking-widest text-white/70 uppercase">
                   Podporujeme
                 </span>
                 <p className="text-2xl font-semibold text-white">Louis Klein</p>
@@ -90,7 +89,7 @@ const Podporujeme = ({ className }: PodporujemeProps) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export { Podporujeme };
+export { Podporujeme }

@@ -1,43 +1,43 @@
-import { ArrowLeft, Calendar, ExternalLink, MapPin, Tag } from "lucide-react";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { ArrowLeft, Calendar, ExternalLink, MapPin, Tag } from "lucide-react"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Footer } from "@/components/footer";
-import { Navbar8 } from "@/components/navbar8";
-import { projects, sectors } from "@/lib/portfolio";
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { Footer } from "@/components/footer"
+import { Navbar8 } from "@/components/navbar8"
+import { projects, sectors } from "@/lib/portfolio"
 
 interface PortfolioSectorPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }
 
 export function generateStaticParams() {
-  return sectors.map((sector) => ({ slug: sector.slug }));
+  return sectors.map((sector) => ({ slug: sector.slug }))
 }
 
 export async function generateMetadata({ params }: PortfolioSectorPageProps) {
-  const { slug } = await params;
-  const sector = sectors.find((s) => s.slug === slug);
-  if (!sector) return {};
+  const { slug } = await params
+  const sector = sectors.find((s) => s.slug === slug)
+  if (!sector) return {}
 
   return {
     title: sector.title,
     description: sector.description,
-  };
+  }
 }
 
 export default async function PortfolioSectorPage({
   params,
 }: PortfolioSectorPageProps) {
-  const { slug } = await params;
-  const sector = sectors.find((s) => s.slug === slug);
-  if (!sector) notFound();
+  const { slug } = await params
+  const sector = sectors.find((s) => s.slug === slug)
+  if (!sector) notFound()
 
   const sectorProjects = projects.filter(
-    (project) => project.category === sector.category,
-  );
+    (project) => project.category === sector.category
+  )
 
   return (
     <>
@@ -69,7 +69,7 @@ export default async function PortfolioSectorPage({
                       "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
                       s.slug === sector.slug
                         ? "border-petrol-steel bg-gradient-to-r from-petrol-steel via-[#1b3f4f] to-[#0e2530] text-white"
-                        : "border-border bg-background text-muted-foreground hover:border-foreground/40 hover:text-foreground",
+                        : "border-border bg-background text-muted-foreground hover:border-foreground/40 hover:text-foreground"
                     )}
                   >
                     {s.title}
@@ -111,7 +111,7 @@ export default async function PortfolioSectorPage({
                 <div className="flex flex-col gap-3 p-5">
                   <div className="space-y-2">
                     <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-lg font-semibold leading-tight">
+                      <h3 className="text-lg leading-tight font-semibold">
                         {project.title}
                       </h3>
                       <Badge
@@ -119,7 +119,7 @@ export default async function PortfolioSectorPage({
                         className={cn(
                           "shrink-0 text-xs",
                           project.category === "Rezidenční development" &&
-                            "border-[#1c3d28]/20 bg-[#1c3d28]/8 text-[#1c3d28]",
+                            "border-[#1c3d28]/20 bg-[#1c3d28]/8 text-[#1c3d28]"
                         )}
                       >
                         <Tag className="mr-1 h-3 w-3" />
@@ -143,11 +143,14 @@ export default async function PortfolioSectorPage({
                   {project.website && (
                     <Button
                       asChild
-                      variant="ghost"
                       size="sm"
-                      className="group mt-1 w-fit rounded-full border border-border/60 px-4 text-xs font-medium tracking-wide text-foreground hover:border-foreground/40"
+                      className="group mt-1 w-fit rounded-full px-4 text-xs font-medium tracking-wide"
                     >
-                      <a href={project.website} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Navštívit web
                         <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </a>
@@ -162,5 +165,5 @@ export default async function PortfolioSectorPage({
 
       <Footer />
     </>
-  );
+  )
 }

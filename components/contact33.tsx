@@ -1,42 +1,42 @@
-"use client";
+"use client"
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { LoaderIcon } from "lucide-react";
-import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { LoaderIcon } from "lucide-react"
+import { useState } from "react"
+import { Controller, useForm } from "react-hook-form"
+import { z } from "zod"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/utils";
-import { FadeUp } from "@/components/fade-up";
-import { TextAnimate } from "@/components/ui/text-animate";
-import { buildNotchPath, maskedShapeStyle } from "@/lib/masked-shape";
+} from "@/components/ui/select"
+import { Textarea } from "@/components/ui/textarea"
+import { cn } from "@/lib/utils"
+import { FadeUp } from "@/components/fade-up"
+import { TextAnimate } from "@/components/ui/text-animate"
+import { buildNotchPath, maskedShapeStyle } from "@/lib/masked-shape"
 
-const IMAGE_W = 1200;
-const IMAGE_H = 1010;
+const IMAGE_W = 1200
+const IMAGE_H = 1010
 const IMAGE_MASK_PATH = buildNotchPath(
   "bottom-left",
   IMAGE_W,
   IMAGE_H,
   48,
   120,
-  170,
-);
+  170
+)
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Jméno je povinné"),
@@ -46,16 +46,16 @@ const contactFormSchema = z.object({
     .email("Zadejte platnou e-mailovou adresu"),
   subject: z.string().optional(),
   message: z.string().min(1, "Zpráva je povinná"),
-});
+})
 
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = z.infer<typeof contactFormSchema>
 
 interface Contact33Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  className?: string;
-  onSubmit?: (data: ContactFormData) => Promise<void>;
+  title?: string
+  description?: string
+  image?: string
+  className?: string
+  onSubmit?: (data: ContactFormData) => Promise<void>
 }
 
 const Contact33 = ({
@@ -65,8 +65,8 @@ const Contact33 = ({
   className,
   onSubmit,
 }: Contact33Props) => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -78,27 +78,27 @@ const Contact33 = ({
       subject: "",
       message: "",
     },
-  });
+  })
 
   const handleFormSubmit = async (data: ContactFormData) => {
     try {
       if (onSubmit) {
-        await onSubmit(data);
+        await onSubmit(data)
       } else {
-        console.log("Form submitted:", data);
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        console.log("Form submitted:", data)
+        await new Promise((resolve) => setTimeout(resolve, 1000))
       }
-      setIsSubmitted(true);
-      setShowSuccess(true);
-      form.reset();
-      setTimeout(() => setShowSuccess(false), 4500);
-      setTimeout(() => setIsSubmitted(false), 5000);
+      setIsSubmitted(true)
+      setShowSuccess(true)
+      form.reset()
+      setTimeout(() => setShowSuccess(false), 4500)
+      setTimeout(() => setIsSubmitted(false), 5000)
     } catch {
       form.setError("root", {
         message: "Something went wrong. Please try again.",
-      });
+      })
     }
-  };
+  }
 
   return (
     <section className={cn("section-py", className)}>
@@ -107,7 +107,13 @@ const Contact33 = ({
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <div className="mb-12">
-                <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading">
+                <TextAnimate
+                  as="h2"
+                  by="word"
+                  animation="blurInUp"
+                  once
+                  className="section-heading"
+                >
                   {title}
                 </TextAnimate>
                 <FadeUp delay={0.1}>
@@ -119,7 +125,7 @@ const Contact33 = ({
                 <div
                   className={cn(
                     "mb-6 rounded-lg border border-green-500/20 bg-green-500/10 p-4 text-center transition-opacity duration-500",
-                    showSuccess ? "opacity-100" : "opacity-0",
+                    showSuccess ? "opacity-100" : "opacity-0"
                   )}
                 >
                   <p className="text-sm font-medium text-green-600 dark:text-green-400">
@@ -192,7 +198,9 @@ const Contact33 = ({
                             <SelectItem value="general">
                               Obecný dotaz
                             </SelectItem>
-                            <SelectItem value="investment">Investiční příležitost</SelectItem>
+                            <SelectItem value="investment">
+                              Investiční příležitost
+                            </SelectItem>
                             <SelectItem value="partnership">
                               Partnerství
                             </SelectItem>
@@ -233,8 +241,7 @@ const Contact33 = ({
                   )}
 
                   <Button
-                    variant="outline"
-                    className="w-full sm:w-auto rounded-full border-border/60 text-xs tracking-widest uppercase hover:border-foreground"
+                    className="w-full rounded-full text-xs tracking-widest uppercase sm:w-auto"
                     disabled={form.formState.isSubmitting}
                   >
                     {form.formState.isSubmitting ? (
@@ -262,7 +269,7 @@ const Contact33 = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export { Contact33 };
+export { Contact33 }

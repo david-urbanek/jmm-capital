@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   useCarousel,
-} from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
-import { TextAnimate } from "@/components/ui/text-animate";
+} from "@/components/ui/carousel"
+import { cn } from "@/lib/utils"
+import { TextAnimate } from "@/components/ui/text-animate"
 
 const teamMembers = [
   {
@@ -37,17 +37,23 @@ const teamMembers = [
     designation: "Transakce & Právní",
     bio: "Zajišťuje due diligence, smluvní dokumentaci a právní strukturování akvizic. Klíčová role při exitech do CTP a Logicor.",
   },
-];
+]
 
 interface Gallery27Props {
-  className?: string;
+  className?: string
 }
 
 const Gallery27 = ({ className }: Gallery27Props) => {
   return (
     <section className={cn("section-py", className)}>
       <div className="container">
-        <TextAnimate as="h2" by="word" animation="blurInUp" once className="section-heading">
+        <TextAnimate
+          as="h2"
+          by="word"
+          animation="blurInUp"
+          once
+          className="section-heading"
+        >
           Tým
         </TextAnimate>
         <p className="section-subheading">
@@ -88,24 +94,22 @@ const Gallery27 = ({ className }: Gallery27Props) => {
         </Carousel>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export { Gallery27 };
+export { Gallery27 }
 
 interface CarouselArrowProps {
-  direction: "prev" | "next";
+  direction: "prev" | "next"
 }
 
 const CarouselArrow = ({ direction }: CarouselArrowProps) => {
-  const { scrollPrev, scrollNext, canScrollPrev, canScrollNext } =
-    useCarousel();
-  const isPrev = direction === "prev";
+  const { scrollPrev, scrollNext, canScrollPrev, canScrollNext } = useCarousel()
+  const isPrev = direction === "prev"
 
   return (
     <Button
       size="icon"
-      variant="outline"
       onClick={isPrev ? scrollPrev : scrollNext}
       disabled={isPrev ? !canScrollPrev : !canScrollNext}
       className="h-9 w-9 rounded-full shadow-sm"
@@ -117,5 +121,5 @@ const CarouselArrow = ({ direction }: CarouselArrowProps) => {
         <ArrowRight className="h-4 w-4" />
       )}
     </Button>
-  );
-};
+  )
+}

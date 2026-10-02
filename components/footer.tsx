@@ -1,5 +1,11 @@
-import { Separator } from "@/components/ui/separator";
-import { Logo } from "@/components/logo";
+import { projects } from "@/lib/portfolio"
+
+import { Separator } from "@/components/ui/separator"
+import { Logo } from "@/components/logo"
+
+const PROJECT_LINKS = projects.flatMap((project) =>
+  project.website ? [{ label: project.title, href: project.website }] : []
+)
 
 const FOOTER_LINKS = [
   {
@@ -16,12 +22,23 @@ const FOOTER_LINKS = [
   {
     heading: "Portfolio",
     links: [
-      { label: "Rezidenční development", href: "/portfolio/rezidencni-development" },
+      {
+        label: "Rezidenční development",
+        href: "/portfolio/rezidencni-development",
+      },
       { label: "Průmyslové parky", href: "/portfolio/prumyslove-parky" },
-      { label: "Komerční nemovitosti", href: "/portfolio/komercni-nemovitosti" },
+      {
+        label: "Komerční nemovitosti",
+        href: "/portfolio/komercni-nemovitosti",
+      },
       { label: "Hospitality", href: "/portfolio/hospitality" },
     ],
   },
+  {
+    heading: "Projekty",
+    links: PROJECT_LINKS,
+  },
+
   {
     heading: "Firma",
     links: [
@@ -29,7 +46,7 @@ const FOOTER_LINKS = [
       { label: "recepce@jmmcapital.cz", href: "mailto:recepce@jmmcapital.cz" },
     ],
   },
-];
+]
 
 const Footer = () => {
   return (
@@ -38,17 +55,18 @@ const Footer = () => {
       <div className="pointer-events-none absolute -top-32 -right-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
 
-      <div className="container relative py-14 lg:py-16">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-4">
+      <div className="relative container py-14 lg:py-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="/" className="flex items-center mb-5">
+            <a href="/" className="mb-5 flex items-center">
               <Logo size="md" className="brightness-0 invert" />
             </a>
-            <p className="text-sm text-white/70 leading-relaxed mb-4">
-              Přivádíme na svět udržitelné projekty. Máme vize, ctíme hodnoty, hledáme potenciál.
+            <p className="mb-4 text-sm leading-relaxed text-white/70">
+              Přivádíme na svět udržitelné projekty. Máme vize, ctíme hodnoty,
+              hledáme potenciál.
             </p>
-            <div className="text-xs text-white/50 space-y-1">
+            <div className="space-y-1 text-xs text-white/50">
               <p>Vyskočilova 1326/5, 140 00 Praha 4</p>
               <p>IČ: 02083388 | DIČ: CZ02083388</p>
               <p>+420 242 441 144</p>
@@ -58,7 +76,7 @@ const Footer = () => {
           {/* Nav columns */}
           {FOOTER_LINKS.map((col) => (
             <div key={col.heading}>
-              <p className="text-xs font-medium tracking-widest uppercase text-white/40 mb-4">
+              <p className="mb-4 text-xs font-medium tracking-widest text-white/40 uppercase">
                 {col.heading}
               </p>
               <ul className="flex flex-col gap-2.5">
@@ -66,7 +84,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-white/70 hover:text-white transition-colors"
+                      className="text-sm text-white/70 transition-colors hover:text-white"
                     >
                       {link.label}
                     </a>
@@ -84,13 +102,23 @@ const Footer = () => {
             JMM Capital s.r.o., Praha, IČO 02083388
           </p>
           <div className="flex gap-5">
-            <a href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">Právní úprava</a>
-            <a href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">Ochrana dat</a>
+            <a
+              href="#"
+              className="text-xs text-white/40 transition-colors hover:text-white/70"
+            >
+              Právní úprava
+            </a>
+            <a
+              href="#"
+              className="text-xs text-white/40 transition-colors hover:text-white/70"
+            >
+              Ochrana dat
+            </a>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export { Footer };
+export { Footer }
